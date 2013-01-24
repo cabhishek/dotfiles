@@ -17,7 +17,7 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # Z directory jumping util
-. /Users/cabhishek/dotfiles/z.sh
+. $HOME/dotfiles/z.sh
 
 ##############################################################################
 # 02. Aliases                                                                #

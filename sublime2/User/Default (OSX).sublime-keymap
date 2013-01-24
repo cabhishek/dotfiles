@@ -1,0 +1,7 @@
+[
+{ "keys": ["ctrl+s"], "command": "toggle_side_bar" },
+{ "keys": ["ctrl+1"], "command": "toggle_setting", "args": {"setting": "gutter"} },
+{ "keys": ["super+v"], "command": "paste_and_indent" },
+{ "keys": ["super+shift+v"], "command": "paste" },
+{ "keys": ["ctrl+0"], "command": "toggle_minimap" }
+]

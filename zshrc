@@ -16,6 +16,8 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
+export PATH=$PATH:/opt/local/bin
+
 # Z directory jumping util
 . $HOME/dotfiles/z.sh
 

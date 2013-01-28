@@ -4,6 +4,7 @@
 ##############################################################################
 # 01. General                                                                #
 ##############################################################################
+export PATH=/usr/local/bin:$PATH
 export PATH=$HOME/local/bin:$PATH
 #export PATH=$HOME/local/bin:$PATH .~/.bashrc
 alias ls="ls -Glah"

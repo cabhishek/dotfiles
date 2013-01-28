@@ -3,5 +3,6 @@
 { "keys": ["ctrl+1"], "command": "toggle_setting", "args": {"setting": "gutter"} },
 { "keys": ["super+v"], "command": "paste_and_indent" },
 { "keys": ["super+shift+v"], "command": "paste" },
-{ "keys": ["ctrl+0"], "command": "toggle_minimap" }
+{ "keys": ["ctrl+0"], "command": "toggle_minimap" },
+{ "keys": ["n", "n"], "command": "advanced_new_file" }
 ]

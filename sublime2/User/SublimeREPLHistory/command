@@ -1,2 +1,8 @@
 -Python
 -2 + 2
+-data[]
+-data = []
+-data.append("abhis")
+-data[0]
+-data.append("javascript")
+-data[1]

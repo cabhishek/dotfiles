@@ -18,12 +18,15 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH=$PATH:/opt/local/bin
 
+export PATH=$PATH:$HOME/Projects/AWS-ElasticBeanstalk-CLI-2.3/eb/macosx/python2.7/
+
 # Z directory jumping util
 . $HOME/dotfiles/z.sh
 
 ##############################################################################
 # 02. Aliases                                                                #
 ##############################################################################
+eval "$(hub alias -s)"
 # Enable colors in "ls" command output
 alias slime='open -a "Sublime Text 2"'
 alias gpushom="git push origin master"

@@ -6,3 +6,61 @@
 -data[0]
 -data.append("javascript")
 -data[1]
+-2 + 2
+-import requests
+-payload = {uid:5}
+-payload = { 'uid':5}
+-r = requests('http://api.fool.com/premium/subscriptions', params:payload)
+-r = requests('http://api.fool.com/premium/subscriptions', params = payload)
+-import requests
+-r = requests.get('http://api.fool.com/premium/subscriptions', params = payload)
+-r = requests.get('https://github.com/timeline.json')
+-import requests
+-r = requests.get('https://github.com/timeline.json')
+-pip install requests
+-clear
+-exit()
+-import requests
+-r = requests.get('https://github.com/timeline.json')
+-payload = {'uid' : 5, 'apikey' : cf3d7f4bfeba0786742d5339a527af61}
+-payload = {'uid' : 5, 'apikey' : 'cf3d7f4bfeba0786742d5339a527af61'}
+-r = requests.get('http://api.fool.com/premium/subscriptions', params = payload)
+-r
+-r[0].ProductId
+-r.ProductId
+-r
+-print r.ProductId
+-r.encoding
+-r.json()
+-payload = {'uid' : 302602577, 'apikey' : 'cf3d7f4bfeba0786742d5339a527af61'}
+-r = requests.get('http://api.fool.com/premium/subscriptions', params = payload)
+-r.json()
+-r.ProductId
+-r[0].ProductId
+-print re
+-print r
+-r.json()
+-r[0].ProductName
+-r.get('ProductId')
+-print r.url
+-r.content
+-import json
+-j = json.loads(r.content)
+-j.get('ProductId')
+-j[0].get('ProductId')
+-r
+-for userSubscription in r:\n\n        if userSubscription.get('ProductId') == 1255:\n            is_valid = True\n            break
+-j[0].get('ProductId')
+-FOOL_USERSUBSCRIPTIONS_API_URL = 'http://api.fool.com/premium/subscriptions?apikey=cf3d7f4bfeba0786742d5339a527af61'
+- userSubsrciptions = json.loads(requests.get(settings.FOOL_USERSUBSCRIPTIONS_API_URL, params={'uid': 1500726899}))
+-userSubsrciptions = json.loads(requests.get(settings.FOOL_USERSUBSCRIPTIONS_API_URL, params={'uid': 1500726899}))
+-userSubsrciptions = json.loads(requests.get(FOOL_USERSUBSCRIPTIONS_API_URL, params={'uid': 1500726899}))
+-userSubsrciptions = (requests.get(FOOL_USERSUBSCRIPTIONS_API_URL, params={'uid': 1500726899}))
+-userSubsrciptions
+-userSubsrciptions.json()
+-j = json.loads(userSubsrciptions)
+-userSubsrciptions = (requests.get(FOOL_USERSUBSCRIPTIONS_API_URL, params={'uid': 1500726899}))
+-userSubsrciptions[0].get('ProductId')
+-userSubsrciptions = json.loads(requests.get(FOOL_USERSUBSCRIPTIONS_API_URL, params={'uid': 1500726899}).content)
+-userSubsrciptions[0].get(/ProductId)
+-userSubsrciptions[0].get('ProductId')

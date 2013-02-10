@@ -64,3 +64,22 @@
 -userSubsrciptions = json.loads(requests.get(FOOL_USERSUBSCRIPTIONS_API_URL, params={'uid': 1500726899}).content)
 -userSubsrciptions[0].get(/ProductId)
 -userSubsrciptions[0].get('ProductId')
+-2 + 2
+-magic = lamda x : x * 2
+-magic = lamda x: x * 2
+-magic = lambda x: x*2
+-nameless = magic
+-print nameless(2)
+-sample = [1,2,3,4]
+-newlist = map(lambda x: x*2, sample)
+-print newlist
+-newlist = [x*2 for number in sample]
+-newlist = [ x * 2 for number in sample]
+-newlist = [x * 2 for number in sample]
+-squares = [x**2 for x in range(10)]
+-print squares
+-squares = [x*2 for x in sample]
+-print squares
+-clear
+-exit
+-exit()

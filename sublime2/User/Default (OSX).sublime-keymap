@@ -4,5 +4,5 @@
 { "keys": ["super+v"], "command": "paste_and_indent" },
 { "keys": ["super+shift+v"], "command": "paste" },
 { "keys": ["ctrl+0"], "command": "toggle_minimap" },
-{ "keys": ["n", "n", "n"], "command": "advanced_new_file" }
+{ "keys": ["x", "s"], "command": "advanced_new_file" }
 ]

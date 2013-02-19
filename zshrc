@@ -18,6 +18,7 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH=$PATH:/opt/local/bin
 
+#AWS crap
 export PATH=$PATH:$HOME/Projects/AWS-ElasticBeanstalk-CLI-2.3/eb/macosx/python2.7/
 
 # Z directory jumping util
@@ -48,3 +49,5 @@ alias gl="git log --pretty='format:%Cgreen%h%Creset %an - %s' --graph"
 alias gpom="git pull origin master"
 alias gcd='cd "`git rev-parse --show-toplevel`"'
 alias grevall= "git checkout -- ."
+# nice log summary from previous day for daily standup
+alias gsup= "!clear && log --since '1 day ago' --oneline --author cabhishek@gmail.com"

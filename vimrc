@@ -4,13 +4,18 @@ set number
 set ruler
 syntax on
 
+let mapleader = ','
+
+"pathogen
+execute pathogen#infect()
+
 " Set encoding
 set encoding=utf-8
 
 " Whitespace stuff
 set nowrap
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 set softtabstop=2
 set expandtab
 set list listchars=tab:\ \ ,trail:·
@@ -53,16 +58,16 @@ if has("autocmd")
     \| exe "normal g'\"" | endif
 endif
 
-function s:setupWrapping()
-  set wrap
-  set wrapmargin=2
-  set textwidth=72
-endfunction
-
-function s:setupMarkup()
-  call s:setupWrapping()
-  map <buffer> <Leader>p :Hammer<CR>
-endfunction
+"function s:setupWrapping()
+"  set wrap
+"  set wrapmargin=2
+"  set textwidth=72
+"endfunction
+"
+"function s:setupMarkup()
+"  call s:setupWrapping()
+"  map <buffer> <Leader>p :Hammer<CR>
+"endfunction
 
 " make uses real tabs
 au FileType make set noexpandtab
@@ -126,7 +131,8 @@ set modelines=10
 
 " Default color scheme
 if has("gui_running")
-    colorscheme vibrantink
+    colorscheme railscasts
+    set guifont=Monaco:h12
 else
     colorscheme desert
 endif
@@ -134,9 +140,6 @@ endif
 " Directories for swp files
 set backupdir=~/.vim/backup
 set directory=~/.vim/backup
-
-" Turn off jslint errors by default
-let g:JSLintHighlightErrorLine = 0
 
 " MacVIM shift+arrow-keys behavior (required in .vimrc)
 let macvim_hig_shift_movement = 1

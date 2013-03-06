@@ -83,3 +83,229 @@
 -clear
 -exit
 -exit()
+-from datetime import datetime, timedelta
+-print datetime.now
+-print datetime.now.days
+-print datetime
+-datetime.now - timedelta(weeks=2)
+-print datetime.now()
+-datetime.now() - timedelta(weeks=2)
+-timedelta
+-timedelta(days=1)
+-print timedelta(days=1)
+-datetime.now()
+-import pytz
+-import pytz
+-from datetime import datetime, timedelta
+-timedelta(days=1)
+-datetime.now()
+-datetime.now(pytz.utc) - timedelta(weeks=2)
+-datetime.now() - timedelta(weeks=2)
+-datetime.now()- timedelta(days=1)
+-clear
+-clear()
+-hasValue = true
+-hasValue = True
+-print hasValue
+-print not hasValue
+-print False or hasValue
+-print False or not hasValue
+-print True or not hasValue
+-print or hasValue
+-import re
+-print "MSFT.ws"[-3]
+-print "MSFT.ws"[:-3]
+-print "MSFT.ws"[:3]
+-print "MSFT.ws"[3:]
+-print "MSFT.ws"[2:]
+-print "MSFT.ws"[-2:]
+-print "MSFT.ws"[-3:]
+-print "MSFT.ws"[4]
+-print "MSFT.ws"[5]
+-print "MSFT.ws"[:]
+-print "MSFT.ws"[:1]
+-print "MSFT.ws"[0:2]
+-print "MSFT.ws"[1:2]
+-print "MSFT.ws"[1:3]
+-print "MSFT.ws"[0:4]
+-print "MSFT.ws"[0:7]
+-print "MSFT.ws"[0:6]
+-print "MSFT.ws"[0:7]
+-print "MSFT.ws"[0:]
+-print "MSFT.ws"[:0]
+-print "MSFT.ws"[:1]
+-print "MSFT.ws"[:2]
+-print "MSFT.ws"[-1:]
+-print "MSFT.ws"[-3:]
+-re.search('\\d', 'MSFT130518C29')
+-m = re.search('\\d', 'MSFT130518C29')
+-m.start()
+-'MSFT130518C29'[4:]
+-re.search('\\w','130518C29').match()
+-re.search('\\w','130518C29')
+-m = re.search('\\w','130518C29')
+-m.match()
+-print
+-print m
+-print re.search('\\w','130518C29')
+-match  = re.search('\\w','130518C29')
+-print match
+-match.group()
+-match  = re.search('C','130518C29')
+-print match.group()
+-match  = re.search('C|P','130518C29')
+-print match.group()
+-match  = re.search('C|P','130518P29')
+-print match.group()
+-exit()
+-import re
+-cashMatch = re.search('FCASH|sweep', symbol)
+-symbol = 'MSFT'
+-cashMatch = re.search('FCASH|sweep', symbol)
+-print cashMatch
+-symbol = 'FCASH'
+-cashMatch = re.search('FCASH|sweep', symbol)
+-print cashMatch
+-symbol = 'FCASH12345'
+-print re.search('FCASH|sweep', symbol)
+-cashMatch = re.search('FCASH|sweep', symbol)
+-print cashMatch.group()
+-print symbol
+-symbol = 'MSFTSWEEP'
+-print symbol
+-print re.search('FCASH|sweep', symbol)
+-print re.search('FCASH|sweep', symbol, re.IGNORECASE)
+-print re.search('FCASH|sweep', symbol)
+-print re.search('FCASH|sweep', symbol, re.IGNORECASE)
+-print re.search('\\d', symbol).start()
+-print re.search('\\d', symbol)
+-print symbol
+-symbol = 'MSFT1234'
+-print symbol
+-optionsMatch = re.search('\\d', symbol)
+-print optionsMatch.start()
+-print symbol
+-symbol = 'MSFT'
+-optionsMatch = re.search('\\d', symbol)
+-print optionsMatch.start()
+-optionsMatch = re.search('\\d', 'MSFT1234')
+-print optionsMatch.start()
+-optionsMatch = re.search('\\d', 'MSFT')
+-print yes if optionsMatch
+-if optionsMatch:\n	pass
+-print 'yeys'
+-clear
+-clear()
+-def parse_ticker_type(symbol):\n    ticker_type = 'stocks'\n\n    cashMatch = re.search('FCASH|sweep', symbol, re.IGNORECASE)\n    if cashMatch:\n        ticker_type = 'cash'\n\n    if symbol[-3] is '.ws':\n        ticker_type = 'options'\n    else:\n        optionsMatch = re.search('\\d', symbol)\n        if optionsMatch:\n            start_index = optionsMatch.start()\n            if symbol[start_index:].find('C|P') > 0:\n                ticker_type = 'options'\n\nreturn ticker_type
+-def parse_ticker_type(symbol):\n			ticker_type = 'stocks'\n\n			cashMatch = re.search('FCASH|sweep', symbol, re.IGNORECASE)\n			if cashMatch:\n			    ticker_type = 'cash'\n\n			if symbol[-3] is '.ws':\n			    ticker_type = 'options'\n			else:\n			    optionsMatch = re.search('\\d', symbol)\n			    if optionsMatch:\n			        start_index = optionsMatch.start()\n			        if symbol[start_index:].find('C|P') > 0:\n			            ticker_type = 'options'\n\n		return ticker_type
+-%paste
+-def parse_ticker_type(symbol):\n    ticker_type = 'stocks'\n\n    cashMatch = re.search('FCASH|sweep', symbol, re.IGNORECASE)\n    if cashMatch:\n        ticker_type = 'cash'\n\n    if symbol[-3] is '.ws':\n        ticker_type = 'options'\n    else:\n        optionsMatch = re.search('\\d', symbol)\n        if optionsMatch:\n            start_index = optionsMatch.start()\n            if symbol[start_index:].find('C|P') > 0:\n                ticker_type = 'options'\n\nreturn ticker_type
+-%paste
+-if True:
+-def parse_ticker_type(symbol):\n    ticker_type = 'stocks'\n\n    cashMatch = re.search('FCASH|sweep', symbol, re.IGNORECASE)\n    if cashMatch:\n        ticker_type = 'cash'\n\n    if symbol[-3] is '.ws':\n        ticker_type = 'options'\n    else:\n        optionsMatch = re.search('\\d', symbol)\n        if optionsMatch:\n            start_index = optionsMatch.start()\n            if symbol[start_index:].find('C|P') > 0:\n                ticker_type = 'options'\n\nreturn ticker_type
+-%autoindent
+-def parse_ticker_type(symbol):\n    ticker_type = 'stocks'\n\n    cashMatch = re.search('FCASH|sweep', symbol, re.IGNORECASE)\n    if cashMatch:\n        ticker_type = 'cash'\n\n    if symbol[-3] is '.ws':\n        ticker_type = 'options'\n    else:\n        optionsMatch = re.search('\\d', symbol)\n        if optionsMatch:\n            start_index = optionsMatch.start()\n            if symbol[start_index:].find('C|P') > 0:\n                ticker_type = 'options'\n\nreturn ticker_type
+-if True:
+-def parse_ticker_type(symbol):\n    ticker_type = 'stocks'\n\n    cashMatch = re.search('FCASH|sweep', symbol, re.IGNORECASE)\n    if cashMatch:\n        ticker_type = 'cash'\n\n    if symbol[-3] is '.ws':\n        ticker_type = 'options'\n    else:\n        optionsMatch = re.search('\\d', symbol)\n        if optionsMatch:\n            start_index = optionsMatch.start()\n            if symbol[start_index:].find('C|P') > 0:\n                ticker_type = 'options'\n\nreturn ticker_type
+-def parse_ticker_type(symbol):\n			ticker_type = 'stocks'\n\n			cashMatch = re.search('FCASH|sweep', symbol, re.IGNORECASE)\n			if cashMatch:\n			    ticker_type = 'cash'\n\n			if symbol[-3] is '.ws':\n			    ticker_type = 'options'\n			else:\n			    optionsMatch = re.search('\\d', symbol)\n			    if optionsMatch:\n			        start_index = optionsMatch.start()\n			        if symbol[start_index:].find('C|P') > 0:\n			            ticker_type = 'options'\n\n		return ticker_type
+-%cpaste
+-def parse_ticker_type(symbol):\n    ticker_type = 'stocks'\n\n    cashMatch = re.search('FCASH|sweep', symbol, re.IGNORECASE)\n    if cashMatch:\n        ticker_type = 'cash'\n\n    if symbol[-3] is '.ws':\n        ticker_type = 'options'\n    else:\n        optionsMatch = re.search('\\d', symbol)\n        if optionsMatch:\n            start_index = optionsMatch.start()\n            if symbol[start_index:].find('C|P') > 0:\n                ticker_type = 'options'\n\nreturn ticker_type
+-exit
+---
+-%cpaste
+-def parse_ticker_type(symbol):\n    ticker_type = 'stocks'\n\n    cashMatch = re.search('FCASH|sweep', symbol, re.IGNORECASE)\n    if cashMatch:\n        ticker_type = 'cash'\n\n    if symbol[-3] is '.ws':\n        ticker_type = 'options'\n    else:\n        optionsMatch = re.search('\\d', symbol)\n        if optionsMatch:\n            start_index = optionsMatch.start()\n            if symbol[start_index:].find('C|P') > 0:\n                ticker_type = 'options'\n\n	return ticker_type
+---
+-print parse_ticker_type('FCASH')
+-import re
+-print parse_ticker_type('FCASH')
+-print parse_ticker_type('')
+-print parse_ticker_type('MSFTSWEEP')
+-print parse_ticker_type('MSFT')
+-print parse_ticker_type('MSFT130518C29')
+-print parse_ticker_type('MSFT130518C29.ws')
+-print parse_ticker_type('MSFTSWEEP')
+-if symbol[-3] is '.ws':
+-	print 'options'
+-if 'MSFT.ws'[-3] is '.ws':
+-	print 'options'
+-print 'MSFT'[-3]
+-print 'MSFT'[-3:]
+-print 'MSFT.ws'[-3:]
+-print parse_ticker_type('MSFT.ws')
+-%cpaste
+-def parse_ticker_type(symbol):\n    ticker_type = 'stocks'\n\n    cashMatch = re.search('FCASH|sweep', symbol, re.IGNORECASE)\n    if cashMatch:\n        ticker_type = 'cash'\n\n    if symbol[-3:] is '.ws':\n        ticker_type = 'options'\n    else:\n        optionsMatch = re.search('\\d', symbol)\n        if optionsMatch:\n            start_index = optionsMatch.start()\n            if symbol[start_index:].find('C|P') > 0:\n                ticker_type = 'options'\n\n    return ticker_type
+---
+-print parse_ticker_type('MSFT.ws')
+-def isOptions(symbol):
+-	if symbol[-3:] is '.ws':\n        		return 'options'
+-print isOptions('MSFT.ws')
+-print 'MSFT' is 'MSFT'
+-print 'MSFT.ws'[-3:] is '.ws'
+-print 'MSFT.ws'[-3:]
+-print 'MSFT.ws'[-3:] == '.ws'
+-%cpaste
+-def parse_ticker_type(symbol):\n    ticker_type = 'stocks'\n\n    cashMatch = re.search('FCASH|sweep', symbol, re.IGNORECASE)\n    if cashMatch:\n        ticker_type = 'cash'\n\n    if symbol[-3:] == '.ws':\n        ticker_type = 'options'\n    else:\n        optionsMatch = re.search('\\d', symbol)\n        if optionsMatch:\n            start_index = optionsMatch.start()\n            if symbol[start_index:].find('C|P') > 0:\n                ticker_type = 'options'\n\n    return ticker_type
+---
+-print parse_ticker_type('MSFT.ws')
+-print parse_ticker_type('MSFT')
+-print parse_ticker_type('MSFT123C')
+-print parse_ticker_type('MSFTSWEEP')
+-print parse_ticker_type('FCASHiw23')
+-optionsMatch = re.search('\\d', 'MSFT122324343C343')
+-print 'MSFT122324343C343'[optionsMatch.start():]
+-print 'MSFT122324343C343'[optionsMatch.start():].find('C|P')
+-print 'MSFT122324343C343'[optionsMatch.start():].find('C')
+-%cpaste
+-def parse_ticker_type(symbol):\n    ticker_type = 'stocks'\n\n    cashMatch = re.search('FCASH|sweep', symbol, re.IGNORECASE)\n    if cashMatch:\n        ticker_type = 'cash'\n\n    if symbol[-3:] == '.ws':\n        ticker_type = 'options'\n    else:\n        optionsMatch = re.search('\\d', symbol)\n        if optionsMatch:\n            start_index = optionsMatch.start()\n            op = re.search('C|P', symbol[start_index:], re.IGNORECASE)\n            if op:\n                ticker_type = 'options'\n\n    return ticker_type
+---
+-print parse_ticker_type('MSFT1233434C1213232')
+-print parse_ticker_type('MSFT12334341213232')
+-print parse_ticker_type('MSFT')
+-print parse_ticker_type('MSFT.ws')
+-print parse_ticker_type('MSFT.ws1')
+-print parse_ticker_type('MSFTsweep')
+-print parse_ticker_type('MSFT1234')
+-%cpaste
+-def parse_ticker_type(symbol):\n    ticker_type = 'stocks'\n\n    if _is_cash(symbol):\n        ticker_type = 'cash'\n\n    if _ends_with_ws(symbol):\n        ticker_type = 'options'\n\n    if _has_letter_C_P(symbol):\n        ticker_type = 'options'\n\n    return ticker_type\n\n\ndef _is_cash(symbol):\n    return re.search('FCASH|sweep', symbol, re.IGNORECASE)\n\n\ndef _ends_with_ws(symbol):\n    return symbol[-3:] == '.ws'\n\n\ndef _has_letter_C_P(symbol):\n    match = re.search('\\d', symbol)\n    if match:\n        return re.search('C|P', symbol[match.start():], re.IGNORECASE)
+---
+-print parse_ticker_type('MSFT1234')
+-print parse_ticker_type('MSFT.ws')
+-print parse_ticker_type('MSFT')
+-print parse_ticker_type('MSFT12234343C1213')
+-print parse_ticker_type('MSFTFCASH')
+-%cpaste
+-def parse_ticker_type(ticker):\n    ticker_type = 'stocks'\n\n    if _is_cash(ticker):\n        ticker_type = 'cash'\n\n    if _ends_with_ws(ticker):\n        ticker_type = 'options'\n\n    if _has_letter_C_P(ticker):\n        ticker_type = 'options'\n\n    return ticker_type\n\n\ndef _is_cash(ticker):\n    return re.search('FCASH|sweep', ticker, re.IGNORECASE)\n\n\ndef _ends_with_ws(ticker):\n    return ticker[-3:] == '.ws'\n\n\ndef _has_letter_C_P(ticker):\n    match = re.search('\\d', ticker)\n    if match:\n        return re.search('C|P', ticker[match.start():], re.IGNORECASE)
+---
+-print parse_ticker_type('MSFTFCASH')
+-print parse_ticker_type('FCASH')
+-print parse_ticker_type('GOOG')
+-print parse_ticker_type('GOOG.ws')
+-print parse_ticker_type('GOOC1252532732C')
+-print parse_ticker_type('GOOC')
+-%cpaste
+-def parse_ticker_type(ticker):\n\n    if _is_cash(ticker):\n        return 'cash'\n\n    if _ends_with_ws(ticker) or _has_letter_C_P(ticker):\n        return 'options'\n\n    return 'stocks'\n\n\ndef _is_cash(ticker):\n    return re.search('FCASH|sweep', ticker, re.IGNORECASE)\n\n\ndef _ends_with_ws(ticker):\n    return ticker[-3:] == '.ws'\n\n\ndef _has_letter_C_P(ticker):\n    match = re.search('\\d', ticker)\n    if match:\n        return re.search('C|P', ticker[match.start():], re.IGNORECASE)
+---
+-print parse_ticker_type('GOOC')
+-print parse_ticker_type('GOOC123')
+-print parse_ticker_type('GOOC12344')
+-print parse_ticker_type('GOOC123')
+-%cpaste
+-def parse_ticker_type(ticker):\n\n    if _is_cash(ticker):\n        return 'cash'\n\n    if _ends_with_ws(ticker) or _has_letter_C_P(ticker):\n        return 'options'\n\n    return 'stocks'\n\n\ndef _is_cash(ticker):\n    return re.search('FCASH|sweep', ticker, re.IGNORECASE)\n\n\ndef _ends_with_ws(ticker):\n    return ticker[-3:] == '.ws'\n\n\ndef _has_letter_C_P(ticker):\n    match = re.search('\\d', ticker)\n    if match:\n        return re.search('C|P', ticker[match.start():], re.IGNORECASE)
+---
+-print parse_ticker_type('MSFT1223C')
+-print parse_ticker_type('MSFT')
+-print parse_ticker_type('')
+-print parse_ticker_type('MSFT')
+-print parse_ticker_type('GCP')
+-print parse_ticker_type('GCP12323C')
+-print parse_ticker_type('GCP12323P')
+-%cpaste
+-def parse_ticker_type(ticker):\n\n    if _is_cash(ticker):\n        return 'cash'\n\n    if _ends_with_ws(ticker) or _has_letter_C_P(ticker):\n        return 'options'\n\n    return 'stocks'\n\n\ndef _is_cash(ticker):\n    return re.search('FCASH|SWEEP', ticker, re.IGNORECASE)\n\n\ndef _ends_with_ws(ticker):\n    return ticker[-3:] == '.ws'\n\n\ndef _has_letter_C_P(ticker):\n    match = re.search('\\d', ticker)\n    if match:\n        return re.search('C|P', ticker[match.start():], re.IGNORECASE)
+---
+-print parse_ticker_type('GCP12323P')
+-print parse_ticker_type('GCP')
+-print parse_ticker_type('GCPSWEEP')
+-print parse_ticker_type('GCPsweep')
+-print parse_ticker_type('GCPsweep23212')
+-print parse_ticker_type('GCP23212')
+-print parse_ticker_type('')

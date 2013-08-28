@@ -12,7 +12,7 @@ ZSH_THEME="robbyrussell"
 
 COMPLETION_WAITING_DOTS="true"
 
-plugins=(git)
+plugins=(git python)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -24,15 +24,28 @@ export PATH=$PATH:$HOME/Projects/AWS-ElasticBeanstalk-CLI-2.3/eb/macosx/python2.
 # Z directory jumping util
 . $HOME/dotfiles/z.sh
 
+#VIRTUALENVWRAPPER_PYTHON
+export VIRTUALENVWRAPPER_PYTHON=/Library/Frameworks/Python.framework/Versions/2.7/bin/python
+
+#secret_key
+SECRET_KEY="NU49gAHvAec0I6kp7Q3HZvpQY8nN4w2P"; export SECRET_KEY
+
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
+fi
+
 ##############################################################################
 # 02. Aliases                                                                #
 ##############################################################################
 eval "$(hub alias -s)"
+
 # Enable colors in "ls" command output
-alias slime='open -a "Sublime Text 2"'
+alias cl="clear"
+alias slime='open -a "Sublime Text"'
+alias gpusho="git push origin"
 alias gpushom="git push origin master"
-alias gd="git diff | mate"
-alias ga="git add"
+alias gd="git diff"
+alias ga="git add ."
 alias gbd="git branch -D"
 alias gst="git status"
 alias gca="git commit -a -m"
@@ -47,6 +60,7 @@ alias gba="git branch -a"
 alias gcp="git cherry-pick"
 alias gl="git log --pretty='format:%Cgreen%h%Creset %an - %s' --graph"
 alias gpom="git pull origin master"
+alias gpullo="git pull origin"
 alias gcd='cd "`git rev-parse --show-toplevel`"'
 alias grevall= "git checkout -- ."
 # nice log summary from previous day for daily standup

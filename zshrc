@@ -18,29 +18,34 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH=$PATH:/opt/local/bin
 
-#AWS crap
+# AWS Setup
 export PATH=$PATH:$HOME/Projects/AWS-ElasticBeanstalk-CLI-2.3/eb/macosx/python2.7/
 
 # Z directory jumping util
 . $HOME/dotfiles/z.sh
 
-#secret_key
+# Secret_key
 SECRET_KEY="NU49gAHvAec0I6kp7Q3HZvpQY8nN4w2P"; export SECRET_KEY
 
 if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi
 
+# Setup rbenv
+eval "$(rbenv init - zsh)"
+
 ##############################################################################
 # 02. Aliases                                                                #
 ##############################################################################
-eval "$(rbenv init -)"
 
-# Enable colors in "ls" command output
+alias vim=/Applications/MacVim.app/Contents/MacOS/Vim
+
 alias cl="clear"
 alias slime='open -a "Sublime Text"'
+
 alias gpusho="git push origin"
 alias gpushom="git push origin master"
+
 alias gd="git diff"
 alias ga="git add ."
 alias gbd="git branch -D"
@@ -60,7 +65,9 @@ alias gpom="git pull origin master"
 alias gpullo="git pull origin"
 alias gcd='cd "`git rev-parse --show-toplevel`"'
 alias grevall= "git checkout -- ."
+
 # nice log summary from previous day for daily standup
 alias gsup="clear && log --since '1 day ago' --oneline --author cabhishek@gmail.com"
 alias log="git log --pretty=format:'%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]' --decorate --date=short"
-alias vim=/Applications/MacVim.app/Contents/MacOS/Vim
+
+

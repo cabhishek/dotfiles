@@ -1,0 +1,17 @@
+{
+	"installed_packages":
+	[
+		"Better CoffeeScript",
+		"GitGutter",
+		"JsFormat",
+		"JSHint Gutter",
+		"Origami",
+		"PlainTasks",
+		"Pretty JSON",
+		"RailsCasts Colour Scheme",
+		"SideBarEnhancements",
+		"sublimelint",
+		"SublimeREPL",
+		"Theme - Soda"
+	]
+}

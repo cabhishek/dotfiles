@@ -1,0 +1,508 @@
+-Python
+-2 + 2
+-data[]
+-data = []
+-data.append("abhis")
+-data[0]
+-data.append("javascript")
+-data[1]
+-2 + 2
+-import requests
+-payload = {uid:5}
+-payload = { 'uid':5}
+-r = requests('http://api.fool.com/premium/subscriptions', params:payload)
+-r = requests('http://api.fool.com/premium/subscriptions', params = payload)
+-import requests
+-r = requests.get('http://api.fool.com/premium/subscriptions', params = payload)
+-r = requests.get('https://github.com/timeline.json')
+-import requests
+-r = requests.get('https://github.com/timeline.json')
+-pip install requests
+-clear
+-exit()
+-import requests
+-r = requests.get('https://github.com/timeline.json')
+-payload = {'uid' : 5, 'apikey' : cf3d7f4bfeba0786742d5339a527af61}
+-payload = {'uid' : 5, 'apikey' : 'cf3d7f4bfeba0786742d5339a527af61'}
+-r = requests.get('http://api.fool.com/premium/subscriptions', params = payload)
+-r
+-r[0].ProductId
+-r.ProductId
+-r
+-print r.ProductId
+-r.encoding
+-r.json()
+-payload = {'uid' : 302602577, 'apikey' : 'cf3d7f4bfeba0786742d5339a527af61'}
+-r = requests.get('http://api.fool.com/premium/subscriptions', params = payload)
+-r.json()
+-r.ProductId
+-r[0].ProductId
+-print re
+-print r
+-r.json()
+-r[0].ProductName
+-r.get('ProductId')
+-print r.url
+-r.content
+-import json
+-j = json.loads(r.content)
+-j.get('ProductId')
+-j[0].get('ProductId')
+-r
+-for userSubscription in r:\n\n        if userSubscription.get('ProductId') == 1255:\n            is_valid = True\n            break
+-j[0].get('ProductId')
+-FOOL_USERSUBSCRIPTIONS_API_URL = 'http://api.fool.com/premium/subscriptions?apikey=cf3d7f4bfeba0786742d5339a527af61'
+- userSubsrciptions = json.loads(requests.get(settings.FOOL_USERSUBSCRIPTIONS_API_URL, params={'uid': 1500726899}))
+-userSubsrciptions = json.loads(requests.get(settings.FOOL_USERSUBSCRIPTIONS_API_URL, params={'uid': 1500726899}))
+-userSubsrciptions = json.loads(requests.get(FOOL_USERSUBSCRIPTIONS_API_URL, params={'uid': 1500726899}))
+-userSubsrciptions = (requests.get(FOOL_USERSUBSCRIPTIONS_API_URL, params={'uid': 1500726899}))
+-userSubsrciptions
+-userSubsrciptions.json()
+-j = json.loads(userSubsrciptions)
+-userSubsrciptions = (requests.get(FOOL_USERSUBSCRIPTIONS_API_URL, params={'uid': 1500726899}))
+-userSubsrciptions[0].get('ProductId')
+-userSubsrciptions = json.loads(requests.get(FOOL_USERSUBSCRIPTIONS_API_URL, params={'uid': 1500726899}).content)
+-userSubsrciptions[0].get(/ProductId)
+-userSubsrciptions[0].get('ProductId')
+-2 + 2
+-magic = lamda x : x * 2
+-magic = lamda x: x * 2
+-magic = lambda x: x*2
+-nameless = magic
+-print nameless(2)
+-sample = [1,2,3,4]
+-newlist = map(lambda x: x*2, sample)
+-print newlist
+-newlist = [x*2 for number in sample]
+-newlist = [ x * 2 for number in sample]
+-newlist = [x * 2 for number in sample]
+-squares = [x**2 for x in range(10)]
+-print squares
+-squares = [x*2 for x in sample]
+-print squares
+-clear
+-exit
+-exit()
+-from datetime import datetime, timedelta
+-print datetime.now
+-print datetime.now.days
+-print datetime
+-datetime.now - timedelta(weeks=2)
+-print datetime.now()
+-datetime.now() - timedelta(weeks=2)
+-timedelta
+-timedelta(days=1)
+-print timedelta(days=1)
+-datetime.now()
+-import pytz
+-import pytz
+-from datetime import datetime, timedelta
+-timedelta(days=1)
+-datetime.now()
+-datetime.now(pytz.utc) - timedelta(weeks=2)
+-datetime.now() - timedelta(weeks=2)
+-datetime.now()- timedelta(days=1)
+-clear
+-clear()
+-hasValue = true
+-hasValue = True
+-print hasValue
+-print not hasValue
+-print False or hasValue
+-print False or not hasValue
+-print True or not hasValue
+-print or hasValue
+-import re
+-print "MSFT.ws"[-3]
+-print "MSFT.ws"[:-3]
+-print "MSFT.ws"[:3]
+-print "MSFT.ws"[3:]
+-print "MSFT.ws"[2:]
+-print "MSFT.ws"[-2:]
+-print "MSFT.ws"[-3:]
+-print "MSFT.ws"[4]
+-print "MSFT.ws"[5]
+-print "MSFT.ws"[:]
+-print "MSFT.ws"[:1]
+-print "MSFT.ws"[0:2]
+-print "MSFT.ws"[1:2]
+-print "MSFT.ws"[1:3]
+-print "MSFT.ws"[0:4]
+-print "MSFT.ws"[0:7]
+-print "MSFT.ws"[0:6]
+-print "MSFT.ws"[0:7]
+-print "MSFT.ws"[0:]
+-print "MSFT.ws"[:0]
+-print "MSFT.ws"[:1]
+-print "MSFT.ws"[:2]
+-print "MSFT.ws"[-1:]
+-print "MSFT.ws"[-3:]
+-re.search('\\d', 'MSFT130518C29')
+-m = re.search('\\d', 'MSFT130518C29')
+-m.start()
+-'MSFT130518C29'[4:]
+-re.search('\\w','130518C29').match()
+-re.search('\\w','130518C29')
+-m = re.search('\\w','130518C29')
+-m.match()
+-print
+-print m
+-print re.search('\\w','130518C29')
+-match  = re.search('\\w','130518C29')
+-print match
+-match.group()
+-match  = re.search('C','130518C29')
+-print match.group()
+-match  = re.search('C|P','130518C29')
+-print match.group()
+-match  = re.search('C|P','130518P29')
+-print match.group()
+-exit()
+-import re
+-cashMatch = re.search('FCASH|sweep', symbol)
+-symbol = 'MSFT'
+-cashMatch = re.search('FCASH|sweep', symbol)
+-print cashMatch
+-symbol = 'FCASH'
+-cashMatch = re.search('FCASH|sweep', symbol)
+-print cashMatch
+-symbol = 'FCASH12345'
+-print re.search('FCASH|sweep', symbol)
+-cashMatch = re.search('FCASH|sweep', symbol)
+-print cashMatch.group()
+-print symbol
+-symbol = 'MSFTSWEEP'
+-print symbol
+-print re.search('FCASH|sweep', symbol)
+-print re.search('FCASH|sweep', symbol, re.IGNORECASE)
+-print re.search('FCASH|sweep', symbol)
+-print re.search('FCASH|sweep', symbol, re.IGNORECASE)
+-print re.search('\\d', symbol).start()
+-print re.search('\\d', symbol)
+-print symbol
+-symbol = 'MSFT1234'
+-print symbol
+-optionsMatch = re.search('\\d', symbol)
+-print optionsMatch.start()
+-print symbol
+-symbol = 'MSFT'
+-optionsMatch = re.search('\\d', symbol)
+-print optionsMatch.start()
+-optionsMatch = re.search('\\d', 'MSFT1234')
+-print optionsMatch.start()
+-optionsMatch = re.search('\\d', 'MSFT')
+-print yes if optionsMatch
+-if optionsMatch:\n	pass
+-print 'yeys'
+-clear
+-clear()
+-def parse_ticker_type(symbol):\n    ticker_type = 'stocks'\n\n    cashMatch = re.search('FCASH|sweep', symbol, re.IGNORECASE)\n    if cashMatch:\n        ticker_type = 'cash'\n\n    if symbol[-3] is '.ws':\n        ticker_type = 'options'\n    else:\n        optionsMatch = re.search('\\d', symbol)\n        if optionsMatch:\n            start_index = optionsMatch.start()\n            if symbol[start_index:].find('C|P') > 0:\n                ticker_type = 'options'\n\nreturn ticker_type
+-def parse_ticker_type(symbol):\n			ticker_type = 'stocks'\n\n			cashMatch = re.search('FCASH|sweep', symbol, re.IGNORECASE)\n			if cashMatch:\n			    ticker_type = 'cash'\n\n			if symbol[-3] is '.ws':\n			    ticker_type = 'options'\n			else:\n			    optionsMatch = re.search('\\d', symbol)\n			    if optionsMatch:\n			        start_index = optionsMatch.start()\n			        if symbol[start_index:].find('C|P') > 0:\n			            ticker_type = 'options'\n\n		return ticker_type
+-%paste
+-def parse_ticker_type(symbol):\n    ticker_type = 'stocks'\n\n    cashMatch = re.search('FCASH|sweep', symbol, re.IGNORECASE)\n    if cashMatch:\n        ticker_type = 'cash'\n\n    if symbol[-3] is '.ws':\n        ticker_type = 'options'\n    else:\n        optionsMatch = re.search('\\d', symbol)\n        if optionsMatch:\n            start_index = optionsMatch.start()\n            if symbol[start_index:].find('C|P') > 0:\n                ticker_type = 'options'\n\nreturn ticker_type
+-%paste
+-if True:
+-def parse_ticker_type(symbol):\n    ticker_type = 'stocks'\n\n    cashMatch = re.search('FCASH|sweep', symbol, re.IGNORECASE)\n    if cashMatch:\n        ticker_type = 'cash'\n\n    if symbol[-3] is '.ws':\n        ticker_type = 'options'\n    else:\n        optionsMatch = re.search('\\d', symbol)\n        if optionsMatch:\n            start_index = optionsMatch.start()\n            if symbol[start_index:].find('C|P') > 0:\n                ticker_type = 'options'\n\nreturn ticker_type
+-%autoindent
+-def parse_ticker_type(symbol):\n    ticker_type = 'stocks'\n\n    cashMatch = re.search('FCASH|sweep', symbol, re.IGNORECASE)\n    if cashMatch:\n        ticker_type = 'cash'\n\n    if symbol[-3] is '.ws':\n        ticker_type = 'options'\n    else:\n        optionsMatch = re.search('\\d', symbol)\n        if optionsMatch:\n            start_index = optionsMatch.start()\n            if symbol[start_index:].find('C|P') > 0:\n                ticker_type = 'options'\n\nreturn ticker_type
+-if True:
+-def parse_ticker_type(symbol):\n    ticker_type = 'stocks'\n\n    cashMatch = re.search('FCASH|sweep', symbol, re.IGNORECASE)\n    if cashMatch:\n        ticker_type = 'cash'\n\n    if symbol[-3] is '.ws':\n        ticker_type = 'options'\n    else:\n        optionsMatch = re.search('\\d', symbol)\n        if optionsMatch:\n            start_index = optionsMatch.start()\n            if symbol[start_index:].find('C|P') > 0:\n                ticker_type = 'options'\n\nreturn ticker_type
+-def parse_ticker_type(symbol):\n			ticker_type = 'stocks'\n\n			cashMatch = re.search('FCASH|sweep', symbol, re.IGNORECASE)\n			if cashMatch:\n			    ticker_type = 'cash'\n\n			if symbol[-3] is '.ws':\n			    ticker_type = 'options'\n			else:\n			    optionsMatch = re.search('\\d', symbol)\n			    if optionsMatch:\n			        start_index = optionsMatch.start()\n			        if symbol[start_index:].find('C|P') > 0:\n			            ticker_type = 'options'\n\n		return ticker_type
+-%cpaste
+-def parse_ticker_type(symbol):\n    ticker_type = 'stocks'\n\n    cashMatch = re.search('FCASH|sweep', symbol, re.IGNORECASE)\n    if cashMatch:\n        ticker_type = 'cash'\n\n    if symbol[-3] is '.ws':\n        ticker_type = 'options'\n    else:\n        optionsMatch = re.search('\\d', symbol)\n        if optionsMatch:\n            start_index = optionsMatch.start()\n            if symbol[start_index:].find('C|P') > 0:\n                ticker_type = 'options'\n\nreturn ticker_type
+-exit
+---
+-%cpaste
+-def parse_ticker_type(symbol):\n    ticker_type = 'stocks'\n\n    cashMatch = re.search('FCASH|sweep', symbol, re.IGNORECASE)\n    if cashMatch:\n        ticker_type = 'cash'\n\n    if symbol[-3] is '.ws':\n        ticker_type = 'options'\n    else:\n        optionsMatch = re.search('\\d', symbol)\n        if optionsMatch:\n            start_index = optionsMatch.start()\n            if symbol[start_index:].find('C|P') > 0:\n                ticker_type = 'options'\n\n	return ticker_type
+---
+-print parse_ticker_type('FCASH')
+-import re
+-print parse_ticker_type('FCASH')
+-print parse_ticker_type('')
+-print parse_ticker_type('MSFTSWEEP')
+-print parse_ticker_type('MSFT')
+-print parse_ticker_type('MSFT130518C29')
+-print parse_ticker_type('MSFT130518C29.ws')
+-print parse_ticker_type('MSFTSWEEP')
+-if symbol[-3] is '.ws':
+-	print 'options'
+-if 'MSFT.ws'[-3] is '.ws':
+-	print 'options'
+-print 'MSFT'[-3]
+-print 'MSFT'[-3:]
+-print 'MSFT.ws'[-3:]
+-print parse_ticker_type('MSFT.ws')
+-%cpaste
+-def parse_ticker_type(symbol):\n    ticker_type = 'stocks'\n\n    cashMatch = re.search('FCASH|sweep', symbol, re.IGNORECASE)\n    if cashMatch:\n        ticker_type = 'cash'\n\n    if symbol[-3:] is '.ws':\n        ticker_type = 'options'\n    else:\n        optionsMatch = re.search('\\d', symbol)\n        if optionsMatch:\n            start_index = optionsMatch.start()\n            if symbol[start_index:].find('C|P') > 0:\n                ticker_type = 'options'\n\n    return ticker_type
+---
+-print parse_ticker_type('MSFT.ws')
+-def isOptions(symbol):
+-	if symbol[-3:] is '.ws':\n        		return 'options'
+-print isOptions('MSFT.ws')
+-print 'MSFT' is 'MSFT'
+-print 'MSFT.ws'[-3:] is '.ws'
+-print 'MSFT.ws'[-3:]
+-print 'MSFT.ws'[-3:] == '.ws'
+-%cpaste
+-def parse_ticker_type(symbol):\n    ticker_type = 'stocks'\n\n    cashMatch = re.search('FCASH|sweep', symbol, re.IGNORECASE)\n    if cashMatch:\n        ticker_type = 'cash'\n\n    if symbol[-3:] == '.ws':\n        ticker_type = 'options'\n    else:\n        optionsMatch = re.search('\\d', symbol)\n        if optionsMatch:\n            start_index = optionsMatch.start()\n            if symbol[start_index:].find('C|P') > 0:\n                ticker_type = 'options'\n\n    return ticker_type
+---
+-print parse_ticker_type('MSFT.ws')
+-print parse_ticker_type('MSFT')
+-print parse_ticker_type('MSFT123C')
+-print parse_ticker_type('MSFTSWEEP')
+-print parse_ticker_type('FCASHiw23')
+-optionsMatch = re.search('\\d', 'MSFT122324343C343')
+-print 'MSFT122324343C343'[optionsMatch.start():]
+-print 'MSFT122324343C343'[optionsMatch.start():].find('C|P')
+-print 'MSFT122324343C343'[optionsMatch.start():].find('C')
+-%cpaste
+-def parse_ticker_type(symbol):\n    ticker_type = 'stocks'\n\n    cashMatch = re.search('FCASH|sweep', symbol, re.IGNORECASE)\n    if cashMatch:\n        ticker_type = 'cash'\n\n    if symbol[-3:] == '.ws':\n        ticker_type = 'options'\n    else:\n        optionsMatch = re.search('\\d', symbol)\n        if optionsMatch:\n            start_index = optionsMatch.start()\n            op = re.search('C|P', symbol[start_index:], re.IGNORECASE)\n            if op:\n                ticker_type = 'options'\n\n    return ticker_type
+---
+-print parse_ticker_type('MSFT1233434C1213232')
+-print parse_ticker_type('MSFT12334341213232')
+-print parse_ticker_type('MSFT')
+-print parse_ticker_type('MSFT.ws')
+-print parse_ticker_type('MSFT.ws1')
+-print parse_ticker_type('MSFTsweep')
+-print parse_ticker_type('MSFT1234')
+-%cpaste
+-def parse_ticker_type(symbol):\n    ticker_type = 'stocks'\n\n    if _is_cash(symbol):\n        ticker_type = 'cash'\n\n    if _ends_with_ws(symbol):\n        ticker_type = 'options'\n\n    if _has_letter_C_P(symbol):\n        ticker_type = 'options'\n\n    return ticker_type\n\n\ndef _is_cash(symbol):\n    return re.search('FCASH|sweep', symbol, re.IGNORECASE)\n\n\ndef _ends_with_ws(symbol):\n    return symbol[-3:] == '.ws'\n\n\ndef _has_letter_C_P(symbol):\n    match = re.search('\\d', symbol)\n    if match:\n        return re.search('C|P', symbol[match.start():], re.IGNORECASE)
+---
+-print parse_ticker_type('MSFT1234')
+-print parse_ticker_type('MSFT.ws')
+-print parse_ticker_type('MSFT')
+-print parse_ticker_type('MSFT12234343C1213')
+-print parse_ticker_type('MSFTFCASH')
+-%cpaste
+-def parse_ticker_type(ticker):\n    ticker_type = 'stocks'\n\n    if _is_cash(ticker):\n        ticker_type = 'cash'\n\n    if _ends_with_ws(ticker):\n        ticker_type = 'options'\n\n    if _has_letter_C_P(ticker):\n        ticker_type = 'options'\n\n    return ticker_type\n\n\ndef _is_cash(ticker):\n    return re.search('FCASH|sweep', ticker, re.IGNORECASE)\n\n\ndef _ends_with_ws(ticker):\n    return ticker[-3:] == '.ws'\n\n\ndef _has_letter_C_P(ticker):\n    match = re.search('\\d', ticker)\n    if match:\n        return re.search('C|P', ticker[match.start():], re.IGNORECASE)
+---
+-print parse_ticker_type('MSFTFCASH')
+-print parse_ticker_type('FCASH')
+-print parse_ticker_type('GOOG')
+-print parse_ticker_type('GOOG.ws')
+-print parse_ticker_type('GOOC1252532732C')
+-print parse_ticker_type('GOOC')
+-%cpaste
+-def parse_ticker_type(ticker):\n\n    if _is_cash(ticker):\n        return 'cash'\n\n    if _ends_with_ws(ticker) or _has_letter_C_P(ticker):\n        return 'options'\n\n    return 'stocks'\n\n\ndef _is_cash(ticker):\n    return re.search('FCASH|sweep', ticker, re.IGNORECASE)\n\n\ndef _ends_with_ws(ticker):\n    return ticker[-3:] == '.ws'\n\n\ndef _has_letter_C_P(ticker):\n    match = re.search('\\d', ticker)\n    if match:\n        return re.search('C|P', ticker[match.start():], re.IGNORECASE)
+---
+-print parse_ticker_type('GOOC')
+-print parse_ticker_type('GOOC123')
+-print parse_ticker_type('GOOC12344')
+-print parse_ticker_type('GOOC123')
+-%cpaste
+-def parse_ticker_type(ticker):\n\n    if _is_cash(ticker):\n        return 'cash'\n\n    if _ends_with_ws(ticker) or _has_letter_C_P(ticker):\n        return 'options'\n\n    return 'stocks'\n\n\ndef _is_cash(ticker):\n    return re.search('FCASH|sweep', ticker, re.IGNORECASE)\n\n\ndef _ends_with_ws(ticker):\n    return ticker[-3:] == '.ws'\n\n\ndef _has_letter_C_P(ticker):\n    match = re.search('\\d', ticker)\n    if match:\n        return re.search('C|P', ticker[match.start():], re.IGNORECASE)
+---
+-print parse_ticker_type('MSFT1223C')
+-print parse_ticker_type('MSFT')
+-print parse_ticker_type('')
+-print parse_ticker_type('MSFT')
+-print parse_ticker_type('GCP')
+-print parse_ticker_type('GCP12323C')
+-print parse_ticker_type('GCP12323P')
+-%cpaste
+-def parse_ticker_type(ticker):\n\n    if _is_cash(ticker):\n        return 'cash'\n\n    if _ends_with_ws(ticker) or _has_letter_C_P(ticker):\n        return 'options'\n\n    return 'stocks'\n\n\ndef _is_cash(ticker):\n    return re.search('FCASH|SWEEP', ticker, re.IGNORECASE)\n\n\ndef _ends_with_ws(ticker):\n    return ticker[-3:] == '.ws'\n\n\ndef _has_letter_C_P(ticker):\n    match = re.search('\\d', ticker)\n    if match:\n        return re.search('C|P', ticker[match.start():], re.IGNORECASE)
+---
+-print parse_ticker_type('GCP12323P')
+-print parse_ticker_type('GCP')
+-print parse_ticker_type('GCPSWEEP')
+-print parse_ticker_type('GCPsweep')
+-print parse_ticker_type('GCPsweep23212')
+-print parse_ticker_type('GCP23212')
+-print parse_ticker_type('')
+-print max(1,2)
+-print max(1.2,3.2,4,5.6)
+-if max(1.2,3.2,4,5.6) > 0.6:
+-	print 'yes'
+-print 2+2
+-    TRADE_TYPE = Choices(\n        (1, 'buy', ('Buy')),\n        (2, 'sell', ('Sell')),\n    )
+-%cpaste
+-    TRADE_TYPE = Choices(\n        (1, 'buy', ('Buy')),\n        (2, 'sell', ('Sell')),\n    )
+---
+-from model_utils import Choices
+-exit()
+-axises_obj = [{axis:'small', strength:0.3},{axis:'medium', strength:0.5},{axis:'large', strength:0.7}]
+-axises_obj = [{'axis':'small', 'strength':0.3},{'axis':'medium', 'strength':0.5},{'axis':'large', 'strength':0.7}]
+-print axises_obj
+-print max(axises_obj)
+-print max(axises_obj,key=axises_obj.get)
+-prnt axises_obj.keys()
+-print axises_obj.keys()
+-%cpaste
+---
+-print axises_tup
+-axises_tup = [('small': 0.3),('large': 0.8),('medium': 0.5)]
+-axises_tup = [('small',0.3),('large',0.8),('medium',0.5)]
+-print max(axises_tup)
+-print max(axises_tup, key= axises_tup.get)
+-print max(axises_tup, key=lambda x: x[1])
+-tup = max(axises_tup, key=lambda x: x[1])
+-print tup
+-print tup[0]
+-axises_tup = [('small',0.3),('large',0.8),('medium',0.5),('',0.1)]
+-print axises_tup
+-print max(axises_tup, key= lambda x:x[1])
+-print min(axises_tup, key= lambda x:x[1])
+-print min(axises_tup, key= lambda x:x[0])
+-print min(axises_tup, key= lambda x:x)
+-print min(axises_tup, key= lambda x:x[1])
+-print max(axises_tup, key= lambda x:x[1])
+-from heapq import nsmallest
+-print nsmallest(2, axises_tup)
+-print nsmallest(2, axises_tup, key= lambda x:x[1])
+-axises_tup = [('small',0.3),('large',0.8),('medium',0.5)]
+-print nsmallest(2, axises_tup, key= lambda x:x[1])
+-print nlargest(2, axises_tup, key= lambda x:x[1])
+-from heapq import nlargest
+-print nlargest(2, axises_tup, key= lambda x:x[1])
+-print nlargest(2, axises_tup, key= lambda x:x[1])[:1]
+-print nlargest(2, axises_tup, key= lambda x:x[1])[1:]
+-dct = dict(('medium', 0.5))
+-dct = dict([('medium', 0.5)])
+-print dct
+-type
+-x = type(('medium': 0.5))
+-x = type([('medium': 0.5)])
+-print axises_obj
+-print max(axises_obj, key= lambda x:x.strength)
+-print max(axises_obj, key= lambda x:x[1])
+-print max(axises_obj)
+-print max(axises_obj, key= lambda x:x.strength)
+-axises_obj
+-%cpaste
+---
+-%cpaste
+-for i in axises_obj:
+-    print i
+---
+-%class (objectdef __init__(self, arg):\n		super(, self).__init__()\n		self.arg = arg
+-%cpaste
+-for i in axises_obj:
+-  print i.strength
+---
+-print axises_obj.keys()
+-print axises_obj
+-%cpaste
+-for i in axises_obj:
+-	obj = i
+-   prin obj.strength
+---
+-%cpaste
+-for i in axises_obj:
+-   obj = i
+-   print obj.strength
+---
+-print max_tup
+-print axises_tup
+-max_tup = max(axises_tup, key= lambda x:x[1])
+-print max_tup
+-obj = {'strength':max_tup[0], 'axis':max_tup[1]}
+-print obj.strength
+-sample_obj = {'hi':8}
+-print sample_obj.hi
+-print sample_obj.get('hi')
+-print sample_obj['hi']
+-print axises_obj
+-print max(axises_obj, key= lambda x:x['strength'])
+-print axises_obj
+-print max(axises_obj, key=lambda x: x['strength'])
+-print min(axises_obj, key=lambda x: x['strength'])
+-print nlargest(2, axises_obj, key=lambda x: x['strength'])
+-print nsmallest(2, axises_obj, key=lambda x: x['strength'])
+-   smallest = nsmallest(2, axises_obj, key=lambda x: x['strength'])
+-smallest = nsmallest(2, axises_obj, key=lambda x: x['strength'])
+-print smallest
+-print max(smallest, key=lambda x: x['strength'])
+- t = [1, 2, 3, 1, 2, 5, 6, 7, 8]
+-t = [1, 2, 3, 1, 2, 5, 6, 7, 8]
+-print set(t)
+-print list(set(t))
+-print t
+-s = set(t)
+-print s
+-s.add(1)
+-print s
+-print t
+-t.append(1)
+-print t
+-exit
+-()
+-s = 'A' + ' ' + 'B'
+-print s
+-arr = ['a','b']
+-print arr
+-arr = [a,n]
+-print arr
+-arr[1] + arr[2]
+-print '' + ' ' + 'b'
+-print 'a' + ' ' + 'b'
+-print 'Fool Pro' + ' ' + 'buy'
+-print '' + ' ' + 'buy'
+-arr = []
+-arr.append['a' + ' ' + 'b']
+-%cpaste
+-def match(count):
+-   return count + 1
+---
+-print match(2)
+-import requests
+-marketcap_url = 'http://localhost:8000/recommendations/axes/marketcap/?uid=1234512345'
+-res = requests.get(marketcap_url)
+-print res.text
+-print res.json()
+-url = 'https://foolplanning.com/recommendations/axes/marketcap/?uid=1234512345'
+-print url
+-r = requests.get(url)
+-print r.text
+-quote_url = 'http://api.fool.com/quotes/tmf/v1/quotes?symbols=usa:MSFT'
+-r = requests.get(quote_url)
+-print r.text
+-print url
+-import math
+-d  = 188.63
+-print d
+-print math.ceil(d * 100)/100
+-print math.ceil(d)
+-print int(math.ceil(d)
+-)
+-print round(12.12)
+-print int(round(12.1))
+-print int(round(12.6))
+-s = 'BRK-B'
+-print s.replace('-', '.')
+-exit()
+-import this
+-print "a" * 2
+-print 2**2
+-print 3**2
+-print "a"**2
+-print 2.3**@
+-print 2.3**2
+-print 5.1**2
+-print "hello" + "world"
+-print "hello" + " world"
+-print "hello" + 2
+-print 2.3 + 2
+-%cpaste
+-def add(a,b):
+-  return a+b
+---
+-print add(2,3)
+-print add(2.5,3)
+-print add("hello", "world")
+-print add("hello", 2)
+-print add(4.5, 2)
+-exit
+-from decimal import Decimal
+-print Decimal(0.91)
+-print Decimal(0.32323)
+-exit())
+-exit()
+-1+1
+-    def _get_macro_allocations(fund_type):\n        bond, equity, other = 0, 0, 0\n\n        if fund_type == 'Fund_Bond':\n            bond = 1\n        elif fund_type == 'Fund_Equity':\n            equity = 1\n        else:\n            other = 1\n\n    return bond, equity, other
+-%cpaste
+-    def _get_macro_allocations(fund_type):\n        bond, equity, other = 0, 0, 0\n\n        if fund_type == 'Fund_Bond':\n            bond = 1\n        elif fund_type == 'Fund_Equity':\n            equity = 1\n        else:\n            other = 1\n\n    return bond, equity, other
+----
+---
+-exit()
+-0/0
+-0/1

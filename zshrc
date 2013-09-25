@@ -40,6 +40,12 @@ eval "$(rbenv init - zsh)"
 
 alias vim=/Applications/MacVim.app/Contents/MacOS/Vim
 
+# MySQL
+alias start-mysql="sudo /Library/StartupItems/MySQLCOM/MySQLCOM start"
+alias stop-mysql="sudo /Library/StartupItems/MySQLCOM/MySQLCOM stop"
+alias mysql=/usr/local/mysql/bin/mysql
+alias mysqladmin=/usr/local/mysql/bin/mysqladmin
+
 alias cl="clear"
 alias slime='open -a "Sublime Text"'
 

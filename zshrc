@@ -74,6 +74,7 @@ alias grevall= "git checkout -- ."
 
 # nice log summary from previous day for daily standup
 alias gsup="clear && log --since '1 day ago' --oneline --author cabhishek@gmail.com"
+
 alias log="git log --pretty=format:'%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]' --decorate --date=short"
 
 

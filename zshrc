@@ -30,9 +30,15 @@ SECRET_KEY="NU49gAHvAec0I6kp7Q3HZvpQY8nN4w2P"; export SECRET_KEY
 # Setup rbenv
 eval "$(rbenv init - zsh)"
 
+# Setup pyenv
+eval "$(pyenv init - zsh)"
+
 ##############################################################################
 # 02. Aliases                                                                #
 ##############################################################################
+
+# work
+alias work='/Users/akapatkar/financials && source .venv/bin/activate'
 
 alias vim=/Applications/MacVim.app/Contents/MacOS/Vim
 
@@ -43,10 +49,12 @@ alias mysql=/usr/local/mysql/bin/mysql
 alias mysqladmin=/usr/local/mysql/bin/mysqladmin
 
 alias cl="clear"
-alias slime='open -a "Sublime Text"'
+alias sub='open -a "Sublime Text"'
 
 alias gpusho="git push origin"
 alias gpushom="git push origin master"
+alias gpom="git pull origin master"
+alias gpullo="git pull origin"
 
 alias gd="git diff"
 alias ga="git add ."
@@ -63,8 +71,7 @@ alias gco="git checkout"
 alias gba="git branch -a"
 alias gcp="git cherry-pick"
 alias gl="git log --pretty='format:%Cgreen%h%Creset %an - %s' --graph"
-alias gpom="git pull origin master"
-alias gpullo="git pull origin"
+
 alias gcd='cd "`git rev-parse --show-toplevel`"'
 alias grevall= "git checkout -- ."
 

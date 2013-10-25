@@ -7,7 +7,6 @@
 export PATH=/usr/local/bin:$PATH
 export PATH=$HOME/local/bin:$PATH
 #export PATH=$HOME/local/bin:$PATH .~/.bashrc
-alias ls="ls -Glah"
 
 ##############################################################################
 # 02. Theme/Colors                                                           #

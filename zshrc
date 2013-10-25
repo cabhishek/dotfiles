@@ -37,7 +37,11 @@ eval "$(pyenv init - zsh)"
 # 02. Aliases                                                                #
 ##############################################################################
 
-# work
+#Productivity
+alias path='echo -e ${PATH//:/\\n}'
+alias ls="ls -Glah"
+
+# work specific
 alias work='/Users/akapatkar/financials && source .venv/bin/activate'
 
 alias vim=/Applications/MacVim.app/Contents/MacOS/Vim

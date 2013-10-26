@@ -41,10 +41,24 @@ eval "$(pyenv init - zsh)"
 alias path='echo -e ${PATH//:/\\n}'
 alias ls="ls -Glah"
 
+alias vim=/Applications/MacVim.app/Contents/MacOS/Vim
+
 # work specific
 alias work='/Users/akapatkar/financials && source .venv/bin/activate'
 
-alias vim=/Applications/MacVim.app/Contents/MacOS/Vim
+test()
+{   if [ "$1" ]
+    then
+        ./runtests.sh $1/tests
+    else
+        ./runtests.sh
+    fi
+}
+
+startwork()
+{
+    /Users/akapatkar/financials && source .venv/bin/activate && ./up.sh
+}
 
 # MySQL
 alias start-mysql="sudo /Library/StartupItems/MySQLCOM/MySQLCOM start"

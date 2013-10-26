@@ -73,6 +73,7 @@ alias gpusho="git push origin"
 alias gpushom="git push origin master"
 alias gpom="git pull origin master"
 alias gpullo="git pull origin"
+alias gco="git checkout"
 
 alias gd="git diff"
 alias ga="git add ."
@@ -85,16 +86,15 @@ alias gp="git push"
 alias grh="git reset --hard"
 alias gb="git branch"
 alias gcob="git checkout -b"
-alias gco="git checkout"
 alias gba="git branch -a"
 alias gcp="git cherry-pick"
-alias gl="git log --pretty='format:%Cgreen%h%Creset %an - %s' --graph"
 
 alias gcd='cd "`git rev-parse --show-toplevel`"'
 alias grevall= "git checkout -- ."
 
 # nice log summary from previous day for daily standup
 alias gsup="clear && log --since '1 day ago' --oneline --author cabhishek@gmail.com"
+alias gl="git log --pretty='format:%Cgreen%h%Creset %an - %s' --graph"
 
 alias log="git log --pretty=format:'%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]' --decorate --date=short"
 

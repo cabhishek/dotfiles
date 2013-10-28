@@ -43,6 +43,12 @@ alias ls="ls -Glah"
 
 alias vim=/Applications/MacVim.app/Contents/MacOS/Vim
 
+myip(){
+
+    ifconfig | grep "inet " | grep -v 127.0.0.1 | cut -d ' ' -f2
+}
+
+
 # work specific
 alias work='/Users/akapatkar/financials && source .venv/bin/activate'
 

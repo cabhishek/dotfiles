@@ -1,3 +1,6 @@
+#Storm (https://github.com/emre/storm) db file for ssh connections
+# usage-> ssh aws-staging/aws-live
+
 Host aws-staging
     identityfile /Users/akapatkar/financials/.elasticbeanstalk/aws.pem
     hostname 10.12.22.56

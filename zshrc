@@ -13,6 +13,10 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH=$PATH:/opt/local/bin
 
+export WORKON_HOME=$HOME/.virtualenvs
+export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
+source /usr/local/bin/virtualenvwrapper.sh
+
 # Aws Setup
 export PATH=$PATH:$HOME/AWS-ElasticBeanstalk-CLI-2.5.1/eb/macosx/python2.7/
 
@@ -40,3 +44,8 @@ done
 
 
 
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+[ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh # This loads NVM

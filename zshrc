@@ -37,14 +37,6 @@ for file in ~/.{aliases,functions}; do
     [ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
 
-
-
-
-
-
-
-
-
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 

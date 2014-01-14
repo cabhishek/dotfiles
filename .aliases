@@ -10,6 +10,7 @@ alias p="cd ~/Projects"
 alias h="history"
 alias j="jobs"
 
+alias mkvenv=mkvirtualenv
 
 # Mysql
 alias start-mysql="sudo /Library/StartupItems/MySQLCOM/MySQLCOM start"

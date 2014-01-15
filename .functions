@@ -27,8 +27,12 @@ function o() {
 }
 
 notebook(){
-  python manage.py shell_plus --notebook --settings=project.settings-dev
-
+  if [ "$1" ];then
+    echo "Enviornment=>" $1
+    python manage.py shell_plus --notebook --settings=project.settings-$1
+  else 
+    python manage.py shell_plus --notebook --settings=project.settings-dev
+  fi
 }
 
 myip(){

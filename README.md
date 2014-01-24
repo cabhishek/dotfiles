@@ -1,4 +1,4 @@
 Dotfiles
-========
+===
 
-Config files powering mac os dev box.
+***Config files powering mac os dev box.***

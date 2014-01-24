@@ -35,15 +35,6 @@ myip(){
     ifconfig | grep "inet " | grep -v 127.0.0.1 | cut -d ' ' -f2
 }
 
-# Run django work tests
-test()
-{   if [ "$1" ]
-    then
-        ./runtests.sh $1/tests
-    else
-        ./runtests.sh
-    fi
-}
 
 # Start djnago server
 startwork()

@@ -3,11 +3,16 @@
 
 Host aws-staging
     identityfile /Users/akapatkar/financials/.elasticbeanstalk/aws.pem
-    hostname 10.12.22.56
+    hostname 10.12.22.86
     user ec2-user
     port 22
 Host aws-live
     identityfile /Users/akapatkar/financials/.elasticbeanstalk/aws.pem
-    hostname 10.12.22.186
+    hostname 10.12.22.222
+    user ec2-user
+    port 22
+Host informant
+    identityfile /Users/akapatkar/financials/.elasticbeanstalk/aws.pem
+    hostname 54.80.219.59
     user ec2-user
     port 22

@@ -18,7 +18,7 @@ export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
 source /usr/local/bin/virtualenvwrapper.sh
 
 # Aws Setup
-export PATH=$PATH:$HOME/AWS-ElasticBeanstalk-CLI-2.5.1/eb/macosx/python2.7/
+export PATH=$PATH:$HOME/AWS-ElasticBeanstalk-CLI-2.6.0/eb/macosx/python2.7/
 
 # Z directory jumping util
 . $HOME/dotfiles/z.sh

@@ -20,6 +20,10 @@ source /usr/local/bin/virtualenvwrapper.sh
 # Aws Setup
 export PATH=$PATH:$HOME/AWS-ElasticBeanstalk-CLI-2.6.0/eb/macosx/python2.7/
 
+# App engine
+GAE=/usr/local/google_appengine
+export PATH=$PATH:$GAE
+
 # Z directory jumping util
 . $HOME/dotfiles/z.sh
 

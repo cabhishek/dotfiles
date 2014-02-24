@@ -13,6 +13,6 @@ Host aws-live
     port 22
 Host informant
     identityfile /Users/akapatkar/financials/.elasticbeanstalk/aws.pem
-    hostname 10.12.33.6
+    hostname 10.12.33.44
     user ec2-user
     port 22

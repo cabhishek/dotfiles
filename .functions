@@ -41,3 +41,9 @@ startwork()
 {
     /Users/akapatkar/financials && source .venv/bin/activate && ./up.sh
 }
+
+# Clean up wifi issue
+fixwifi()
+{
+    trash /Library/Preferences/SystemConfiguration
+}

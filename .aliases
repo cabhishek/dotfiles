@@ -37,6 +37,9 @@ alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup
 # Work specific
 alias work='/Users/akapatkar/financials && source .venv/bin/activate'
 
+#hub
+alias git=hub
+
 # Git
 alias gpusho="git push origin"
 alias gpushom="git push origin master"

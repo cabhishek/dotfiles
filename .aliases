@@ -46,7 +46,7 @@ alias gpushom="git push origin master"
 alias gpom="git pull origin master"
 alias gpullo="git pull origin"
 alias gco="git checkout"
-
+alias hpush="git push heroku master"
 alias gd="git diff"
 alias ga="git add ."
 alias gbd="git branch -D"

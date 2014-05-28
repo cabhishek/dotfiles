@@ -24,6 +24,9 @@ export PATH=$PATH:$HOME/AWS-ElasticBeanstalk-CLI-2.6.0/eb/macosx/python2.7/
 GAE=/usr/local/google_appengine
 export PATH=$PATH:$GAE
 
+#MYSQL
+export PATH=$PATH:/usr/local/mysql/bin
+
 # Z directory jumping util
 . $HOME/dotfiles/z.sh
 

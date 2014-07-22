@@ -37,6 +37,9 @@ alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup
 # Work specific
 alias work='/Users/akapatkar/financials && source .venv/bin/activate'
 
+#heroku
+alias hpush=“git push heroku master”
+
 #hub
 alias git=hub
 
@@ -46,7 +49,6 @@ alias gpushom="git push origin master"
 alias gpom="git pull origin master"
 alias gpullo="git pull origin"
 alias gco="git checkout"
-alias hpush="git push heroku master"
 alias gd="git diff"
 alias ga="git add ."
 alias gbd="git branch -D"
@@ -60,7 +62,6 @@ alias gb="git branch"
 alias gcob="git checkout -b"
 alias gba="git branch -a"
 alias gcp="git cherry-pick"
-
 alias gcd='cd "`git rev-parse --show-toplevel`"'
 alias grevall= "git checkout -- ."
 

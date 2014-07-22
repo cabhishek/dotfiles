@@ -29,3 +29,5 @@
 	publish = !legit publish \"$@\"
 	graft = !legit graft \"$@\"
 
+[hub]
+	protocol = https

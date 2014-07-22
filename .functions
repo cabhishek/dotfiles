@@ -1,6 +1,6 @@
 # Create a new directory and enter it
 function mkd() {
-        mkdir -p "$@" && cd "$@"
+    	mkdir -p "$@" && cd "$@"
 }
 
 # Determine size of a file or total size of a directory
@@ -39,7 +39,7 @@ myip(){
 # Start djnago server
 startwork()
 {
-    /Users/akapatkar/financials && source .venv/bin/activate && ./up.sh
+    cd /Users/akapatkar/financials && source .venv/bin/activate && ./up.sh
 }
 
 # Clean up wifi issue

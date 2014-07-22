@@ -2,11 +2,9 @@
 # Maintainer: Abhishek Kapatkar
 
 #General
-
 export PATH=/usr/local/bin:$PATH
 export PATH=$HOME/local/bin:$PATH
 
-#Theme/Colors
 
 # CLI Colors
 export CLICOLOR=1

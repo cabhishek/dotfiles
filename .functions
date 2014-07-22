@@ -1,29 +1,29 @@
 # Create a new directory and enter it
 function mkd() {
-    	mkdir -p "$@" && cd "$@"
+    mkdir -p "$@" && cd "$@"
 }
 
 # Determine size of a file or total size of a directory
 function fs() {
-        if du -b /dev/null > /dev/null 2>&1; then
-                local arg=-sbh
-        else
-                local arg=-sh
-        fi
-        if [[ -n "$@" ]]; then
-                du $arg -- "$@"
-        else
-                du $arg .[^.]* *
-        fi
+    if du -b /dev/null > /dev/null 2>&1; then
+            local arg=-sbh
+    else
+            local arg=-sh
+    fi
+    if [[ -n "$@" ]]; then
+            du $arg -- "$@"
+    else
+            du $arg .[^.]* *
+    fi
 }
 
 # `o` with no arguments opens current directory, otherwise opens the given location
 function o() {
-        if [ $# -eq 0 ]; then
-                open .
-        else
-                open "$@"
-        fi
+    if [ $# -eq 0 ]; then
+            open .
+    else
+            open "$@"
+    fi
 }
 
 notebook(){
@@ -31,19 +31,16 @@ notebook(){
 }
 
 myip(){
-
     ifconfig | grep "inet " | grep -v 127.0.0.1 | cut -d ' ' -f2
 }
 
 
 # Start djnago server
-startwork()
-{
+startwork(){
     cd /Users/akapatkar/financials && source .venv/bin/activate && ./up.sh
 }
 
 # Clean up wifi issue
-fixwifi()
-{
+fixwifi(){
     trash /Library/Preferences/SystemConfiguration
 }

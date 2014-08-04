@@ -6,9 +6,13 @@ alias d="cd ~/Documents/Dropbox"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias p="cd ~/Projects"
+alias ho="cd ~"
 
 alias h="history"
 alias j="jobs"
+
+alias sdown="sudo shutdown -h now"
+alias rstart="sudo shutdown -r now"
 
 #venv
 alias mkvenv=mkvirtualenv

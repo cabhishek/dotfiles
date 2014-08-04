@@ -31,9 +31,12 @@ notebook(){
 }
 
 myip(){
-    ifconfig | grep "inet " | grep -v 127.0.0.1 | cut -d ' ' -f2
+    ipconfig getifaddr en0
 }
 
+publicip(){
+    curl ipecho.net/plain; echo
+}
 
 # Start djnago server
 startwork(){

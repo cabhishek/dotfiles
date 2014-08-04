@@ -47,3 +47,7 @@ startwork(){
 fixwifi(){
     trash /Library/Preferences/SystemConfiguration
 }
+
+function tre() {
+    tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
+}

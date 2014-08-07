@@ -39,6 +39,8 @@ eval "$(rbenv init - zsh)"
 # Setup pyenv
 eval "$(pyenv init - zsh)"
 
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+
 # Load all helper .dot files
 for file in ~/.{aliases,functions}; do
     [ -r "$file" ] && [ -f "$file" ] && source "$file"

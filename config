@@ -21,3 +21,8 @@ Host worker
     hostname 10.12.22.65
     user admin
     port 22
+Host aws-test
+    identityfile /Users/akapatkar/financials/.elasticbeanstalk/aws.pem
+    hostname 10.12.42.19
+    user ec2-user
+    port 22

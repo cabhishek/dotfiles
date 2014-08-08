@@ -8,13 +8,12 @@ if has('gui_running')
     set background=light
 endif
 
-# Standard usefulness
 set gfn=Monaco:h12
 set number
 set tabstop=4
 set autoindent
 syntax enable
-let mapleader=","
+let mapleader=";"
 set showmatch
 set ignorecase
 set smartcase
@@ -32,7 +31,6 @@ set noswapfile
 filetype plugin indent on
 nmap <silent> ,/ :nohlsearch<CR>
 
-# Sudo after you open file. In case you forget before
 cmap w!! w !sudo tee % >/dev/null
 
 " Quickly edit/reload the vimrc file
@@ -42,6 +40,10 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 "  NerdTree settings
 autocmd vimenter * NERDTree
 map <C-s> :NERDTreeToggle<CR>
+let NERDTreeIgnore = ['\.pyc$']
+set wildignore+=*.pyc,.venv/**
+
+autocmd BufWritePost *.py call Flake8()
 
 filetype plugin indent on
 filetype detect

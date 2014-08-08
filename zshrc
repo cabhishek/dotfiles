@@ -33,6 +33,10 @@ export PATH=$PATH:/usr/local/mysql/bin
 # Secret_key
 SECRET_KEY="NU49gAHvAec0I6kp7Q3HZvpQY8nN4w2P"; export SECRET_KEY
 
+#pyenv path
+export PYENV_ROOT=$HOME/.pyenv
+export PATH=$PYENV_ROOT/bin:$PATH
+
 # Setup rbenv
 eval "$(rbenv init - zsh)"
 

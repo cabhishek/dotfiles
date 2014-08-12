@@ -1,6 +1,8 @@
 execute pathogen#infect()
 call pathogen#helptags()
 
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+
 syntax on
 filetype plugin indent on
 
@@ -71,3 +73,9 @@ highlight Comment ctermfg=Brown
 
 " Ignore line width for syntax checking
 let g:syntastic_python_flake8_args='--ignore=E501'
+
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+
+nnoremap \ :Ag<SPACE>
+

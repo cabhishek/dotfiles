@@ -34,7 +34,7 @@ alias tr2="tree -CL 2 | less -FRNX"
 alias tr3="tree -CL 3 | less -FRNX"
 
 # Applications
-alias vim=/Applications/MacVim.app/Contents/MacOS/Vim
+alias vim='open -a "/Applications/MacVim.app/Contents/MacOS/MacVim"'
 
 alias sub='open -a "Sublime Text"'
 

@@ -32,6 +32,7 @@ alias cl="clear"
 alias tr="tree -CL 1 | less -FRNX"
 alias tr2="tree -CL 2 | less -FRNX"
 alias tr3="tree -CL 3 | less -FRNX"
+alias f=ag
 
 # Applications
 alias vim='open -a "/Applications/MacVim.app/Contents/MacOS/MacVim"'

@@ -26,8 +26,12 @@ function o() {
     fi
 }
 
-notebook(){
+workbook(){
   python manage.py shell_plus --notebook --settings=project.settings-dev
+}
+
+notebook(){
+  ipython notebook --profile=cabhishek
 }
 
 myip(){

@@ -1,16 +1,18 @@
 execute pathogen#infect()
 call pathogen#helptags()
 
-set runtimepath^=~/.vim/bundle/ctrlp.vim
-
-syntax on
-filetype plugin indent on
-
-
 if has('gui_running')
-    colorscheme solarized
+    colorscheme base16-ocean
     set background=dark
 endif
+
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+
+filetype plugin indent on
+syntax on
+
+filetype detect
+set cindent tabstop=8 shiftwidth=8 cinoptions=l1,:0
 
 syntax enable
 let mapleader=";"
@@ -39,9 +41,13 @@ set list
 set listchars=tab:>.,trail:.,extends:#,nbsp:.
 set nocompatible
 
-" customize the wildmenu
+" Buffer setting
+nnoremap <C-n> :bnext<CR>
+nnoremap <C-p> :bprevious<CR>
+
+" Customize the wildmenu
 set wildmenu
-set wildignore+=*.dll,*.pyc
+set wildignore+=*.dll,*.pyc,.venv
 set wildmode=list:full
 
 let g:netrw_list_hide = '.pyc,.git,.venv'
@@ -61,15 +67,8 @@ cmap w!! w !sudo tee % >/dev/null
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
-filetype plugin indent on
-filetype detect
-set cindent tabstop=8 shiftwidth=8 cinoptions=l1,:0
-
 " The default blue is just impossible to see on a black terminal
 highlight Comment ctermfg=Brown
-
-" Show trailing whitespace and spaces before a tab:
-"match ExtraWhitespace /\s\+$\| \+\ze\t/
 
 " Ignore line width for syntax checking
 let g:syntastic_python_flake8_args='--ignore=E501'

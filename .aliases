@@ -46,7 +46,7 @@ alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup
 alias work='/Users/akapatkar/financials && source .venv/bin/activate'
 
 #Heroku
-alias hpush="git push heroku master"
+alias hpush="git push heroku"
 
 #Hub
 alias git=hub

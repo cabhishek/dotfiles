@@ -11,9 +11,9 @@ function fs() {
             local arg=-sh
     fi
     if [[ -n "$@" ]]; then
-            du $arg -- "$@"
+            du $arg -- "$@" | sort -r
     else
-            du $arg .[^.]* *
+            du $arg .[^.]* * | sort -r
     fi
 }
 
@@ -53,5 +53,5 @@ fixwifi(){
 }
 
 function tre() {
-    tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
+    tree -aC -I '.git|.local-cache|.venv|*.pyc|.DS_Store|__pycache__|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
 }

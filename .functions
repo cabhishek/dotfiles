@@ -26,10 +26,12 @@ function o() {
     fi
 }
 
+# Fire up notebook with dev django settings
 workbook(){
   python manage.py shell_plus --notebook --settings=project.settings-dev
 }
 
+# Generic iPython setup
 notebook(){
   ipython notebook --profile=cabhishek
 }
@@ -52,6 +54,7 @@ fixwifi(){
     trash /Library/Preferences/SystemConfiguration
 }
 
+# List all files with nice color highlighting
 function tre() {
     tree -aC -I '.git|.local-cache|.venv|*.pyc|.DS_Store|__pycache__|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
 }

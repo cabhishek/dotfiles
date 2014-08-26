@@ -78,3 +78,7 @@ let g:ctrlp_cmd = 'CtrlP'
 
 nnoremap \ :Ag<SPACE>
 
+" Python linting setup
+let g:syntastic_enable_perl_checker = 1
+let g:syntastic_python_checkers = ['pylint']
+let g:syntastic_quiet_messages = { "type": "style" }

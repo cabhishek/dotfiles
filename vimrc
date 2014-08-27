@@ -15,7 +15,7 @@ filetype detect
 set cindent tabstop=8 shiftwidth=8 cinoptions=l1,:0
 
 syntax enable
-let mapleader=";"
+let mapleader="'"
 
 " std vim settings to make it easy to use
 set gfn=Monaco:h12
@@ -40,6 +40,12 @@ set gcr=a:blinkon0
 set list
 set listchars=tab:>.,trail:.,extends:#,nbsp:.
 set nocompatible
+
+" Status lines
+:set statusline=%f\ -\ FileType:\ %y
+:set statusline+=%l    " Current line
+:set statusline+=/    " Separator
+:set statusline+=%L   " Total lines
 
 " Buffer setting
 nnoremap <C-n> :bnext<CR>
@@ -82,3 +88,9 @@ nnoremap \ :Ag<SPACE>
 let g:syntastic_enable_perl_checker = 1
 let g:syntastic_python_checkers = ['pylint']
 let g:syntastic_quiet_messages = { "type": "style" }
+
+"folding settings
+set foldmethod=indent   "fold based on indent
+set foldnestmax=10      "deepest fold is 10 levels
+set nofoldenable        "dont fold by default
+set foldlevel=3         "this is just what i use

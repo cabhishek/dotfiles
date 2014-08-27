@@ -46,6 +46,8 @@ set nocompatible
 :set statusline+=%l    " Current line
 :set statusline+=/    " Separator
 :set statusline+=%L   " Total lines
+:set statusline+=%2l
+:set statusline+=%{fugitive#statusline()}
 
 " Buffer setting
 nnoremap <C-n> :bnext<CR>

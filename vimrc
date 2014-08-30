@@ -46,6 +46,15 @@ set title                " change the terminal's title
 set visualbell           " don't beep
 set noerrorbells         " don't beep
 
+set ruler                " Show the cursor position
+set shortmess=atI        " Don’t show the intro message when starting Vim
+set showmode             " Show the current mode
+
+set clipboard=unnamed    " Use the OS clipboard by default (on versions compiled with `+clipboard`)
+set wildmenu             " Enhance command-line completion
+set noeol                " Don’t add empty newlines at the end of files
+set scrolloff=3
+
 set nobackup
 set noswapfile
 
@@ -105,7 +114,7 @@ let g:syntastic_javascript_checkers = ['jshint']
 set foldmethod=indent   "fold based on indent
 set foldnestmax=10      "deepest fold is 10 levels
 set nofoldenable        "dont fold by default
-set foldlevel=1        "this is just what i use
+set foldlevel=1         "this is just what i use
 
 " Jedi-vim
 let g:jedi#goto_assignments_command = "<leader>g"
@@ -116,4 +125,12 @@ let g:jedi#completions_command = "<C-Space>"
 let g:jedi#rename_command = "<leader>r"
 let g:jedi#show_call_signatures = "1"
 
-
+" Automatic commands
+if has("autocmd")
+    " Enable file type detection
+    filetype on
+    " Treat .json files as .js
+    autocmd BufNewFile,BufRead *.json setfiletype json syntax=javascript
+    " Treat .md files as Markdown
+    autocmd BufNewFile,BufRead *.md setlocal filetype=markdown
+endif

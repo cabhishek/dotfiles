@@ -17,6 +17,9 @@ syntax enable
 
 let mapleader="'"
 
+" Avoid useless key stroke
+nnoremap ; :
+
 " Basic setup
 set gfn=Monaco:h12
 
@@ -55,6 +58,9 @@ set wildmenu             " Enhance command-line completion
 set noeol                " Don’t add empty newlines at the end of files
 set scrolloff=3
 
+set infercase            "Adjust completions to match case
+set fileformats=unix,mac,dos        "Handle Mac and DOS line-endings
+                                    "but prefer Unix endings
 set nobackup
 set noswapfile
 
@@ -134,3 +140,20 @@ if has("autocmd")
     " Treat .md files as Markdown
     autocmd BufNewFile,BufRead *.md setlocal filetype=markdown
 endif
+
+" Make arrow keys move visual blocks around
+
+runtime plugin/dragvisuals.vim
+
+vmap  <expr>  <LEFT>   DVB_Drag('left')
+vmap  <expr>  <RIGHT>  DVB_Drag('right')
+vmap  <expr>  <DOWN>   DVB_Drag('down')
+vmap  <expr>  <UP>     DVB_Drag('up')
+
+vmap  <expr>  D        DVB_Duplicate()
+vmap  <expr>  <C-D>    DVB_Duplicate()
+
+" Work out what the comment character is, by filetype...
+autocmd FileType             *sh,awk,python,ruby    let b:cmt = exists('b:cmt') ? b:cmt : '#'
+
+

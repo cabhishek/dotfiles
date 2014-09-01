@@ -71,11 +71,11 @@ map <Leader>a :bprev<Return>
 map <Leader>s :bnext<Return>
 
 " Status lines
-set statusline=%f\ %y
+set statusline=%f\ %y " Path to the file
+:set statusline+=%=   " Switch to the right side
 set statusline+=%l    " Current line
-set statusline+=/    " Separator
-set statusline+=%L   " Total lines
-set statusline+=%2l
+set statusline+=/     " Separator
+set statusline+=%2l   " Total lines
 set statusline+=%{fugitive#statusline()}
 
 " Buffer setting

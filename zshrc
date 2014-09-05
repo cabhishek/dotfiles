@@ -13,6 +13,9 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH=$PATH:/opt/local/bin
 
+# add .local to PATH
+export PATH=~/.local/bin:$PATH
+
 export WORKON_HOME=$HOME/.virtualenvs
 export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
 source /usr/local/bin/virtualenvwrapper.sh

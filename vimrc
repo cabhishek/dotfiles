@@ -67,8 +67,6 @@ set noswapfile
 set autoread
 set gcr=a:blinkon0
 
-map <Leader>a :bprev<Return>
-map <Leader>s :bnext<Return>
 
 " Status lines
 set statusline=%f\ %y " Path to the file
@@ -144,6 +142,7 @@ endif
 " Make arrow keys move visual blocks around
 
 runtime plugin/dragvisuals.vim
+runtime plugin/rename.vim
 
 vmap  <expr>  <LEFT>   DVB_Drag('left')
 vmap  <expr>  <RIGHT>  DVB_Drag('right')
@@ -156,4 +155,9 @@ vmap  <expr>  <C-D>    DVB_Duplicate()
 " Work out what the comment character is, by filetype...
 autocmd FileType             *sh,awk,python,ruby    let b:cmt = exists('b:cmt') ? b:cmt : '#'
 
-
+if exists(":Tabularize")
+  nmap <Leader>a= :Tabularize /=<CR>
+  vmap <Leader>a= :Tabularize /=<CR>
+  nmap <Leader>a: :Tabularize /:<CR>
+  vmap <Leader>a: :Tabularize /:<CR>
+endif

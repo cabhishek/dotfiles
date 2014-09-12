@@ -58,6 +58,7 @@ set noeol                " Don’t add empty newlines at the end of files
 set scrolloff=3
 
 set infercase            "Adjust completions to match case
+
 set fileformats=unix,mac,dos        "Handle Mac and DOS line-endings
                                     "but prefer Unix endings
 set nobackup
@@ -69,15 +70,11 @@ set gcr=a:blinkon0
 
 " Status lines
 set statusline=%f\ %y " Path to the file
-:set statusline+=%=   " Switch to the right side
+set statusline+=%=   " Switch to the right side
 set statusline+=%l    " Current line
 set statusline+=/     " Separator
 set statusline+=%2l   " Total lines
 set statusline+=%{fugitive#statusline()}
-
-" Buffer setting
-nnoremap <C-n> :bnext<CR>
-nnoremap <C-p> :bprevious<CR>
 
 " Customize the wildmenu
 set wildmenu
@@ -119,15 +116,6 @@ set foldnestmax=10      "deepest fold is 10 levels
 set nofoldenable        "dont fold by default
 set foldlevel=1         "this is just what i use
 
-" Jedi-vim
-let g:jedi#goto_assignments_command = "<leader>g"
-let g:jedi#goto_definitions_command = "<leader>d"
-let g:jedi#documentation_command = "K"
-let g:jedi#usages_command = "<leader>n"
-let g:jedi#completions_command = "<C-Space>"
-let g:jedi#rename_command = "<leader>r"
-let g:jedi#show_call_signatures = "1"
-
 " Automatic commands
 if has("autocmd")
     " Enable file type detection
@@ -160,3 +148,10 @@ if exists(":Tabularize")
   nmap <Leader>a: :Tabularize /:<CR>
   vmap <Leader>a: :Tabularize /:<CR>
 endif
+
+" Quick access to awesome Tagbar
+nmap <Leader>y :TagbarToggle<CR>
+
+" Buffer toggle
+nnoremap <Leader>o :bp<CR>
+nnoremap <Leader>p :bn<CR>

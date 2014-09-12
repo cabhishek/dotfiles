@@ -12,6 +12,8 @@ plugins=(git python)
 source $ZSH/oh-my-zsh.sh
 
 export PATH=$PATH:/opt/local/bin
+# Append /usr/local/bin before /usr/bin
+export PATH=/usr/local/bin:$PATH
 
 # add .local to PATH
 export PATH=~/.local/bin:$PATH

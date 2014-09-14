@@ -155,3 +155,9 @@ nmap <Leader>y :TagbarToggle<CR>
 " Buffer toggle
 nnoremap <Leader>o :bp<CR>
 nnoremap <Leader>p :bn<CR>
+
+" Indentation
+noremap > >>
+noremap < <<
+vnoremap > >gv
+vnoremap < <gv

@@ -8,11 +8,7 @@ endif
 
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
-syntax on
-filetype on
-
 filetype plugin indent on
-
 syntax enable
 
 let mapleader="'"
@@ -23,8 +19,13 @@ nnoremap ; :
 " Basic setup
 set gfn=Monaco:h12
 
+set expandtab     " insert with spaces instead of tabs
 set nowrap        " don't wrap lines
-set tabstop=4 softtabstop=4 shiftwidth=4     " a tab is four spaces
+set smartindent
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4     " a tab is four spaces
+
 set backspace=indent,eol,start
                   " allow backspacing over everything in insert mode
 set autoindent    " always set autoindenting on
@@ -161,3 +162,6 @@ noremap > >>
 noremap < <<
 vnoremap > >gv
 vnoremap < <gv
+
+" Vim jedi disable auto-complete on .
+let g:jedi#popup_on_dot=0

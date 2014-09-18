@@ -13,7 +13,7 @@ syntax enable
 
 let mapleader="'"
 
-" Avoid useless key stroke
+" Avoid Shift key stroke
 nnoremap ; :
 
 " Basic setup
@@ -82,7 +82,7 @@ set wildmenu
 set wildignore+=*.dll,*.pyc,.venv
 set wildmode=list:full
 
-let g:netrw_list_hide = '.pyc,.git,.venv'
+let g:netrw_list_hide = '.pyc,.git,.venv,.DS_Store'
 
 nnoremap <tab> %
 vnoremap <tab> %
@@ -136,7 +136,6 @@ vmap  <expr>  <LEFT>   DVB_Drag('left')
 vmap  <expr>  <RIGHT>  DVB_Drag('right')
 vmap  <expr>  <DOWN>   DVB_Drag('down')
 vmap  <expr>  <UP>     DVB_Drag('up')
-
 vmap  <expr>  D        DVB_Duplicate()
 vmap  <expr>  <C-D>    DVB_Duplicate()
 
@@ -157,7 +156,7 @@ nmap <Leader>y :TagbarToggle<CR>
 nnoremap <Leader>o :bp<CR>
 nnoremap <Leader>p :bn<CR>
 
-" Indentation
+" Visual mode indentation
 noremap > >>
 noremap < <<
 vnoremap > >gv

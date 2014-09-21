@@ -65,9 +65,16 @@ set fileformats=unix,mac,dos        "Handle Mac and DOS line-endings
 set nobackup
 set noswapfile
 
+" Set to auto read when a file is changed from the outside.
 set autoread
 set gcr=a:blinkon0
 
+" How many tenths of a second to blink when matching brackets
+set mat=2
+
+" Strip trailing whitespace on save for specified file types.
+autocmd BufWritePre *.css,*.html,*.js,*.json,*.md,*.py,*.rb,*.sh,*.txt
+    \ :call StripTrailingWhitespace()
 
 " Status lines
 set statusline=%f\ %y " Path to the file
@@ -82,8 +89,10 @@ set wildmenu
 set wildignore+=*.dll,*.pyc,.venv
 set wildmode=list:full
 
+" Netrw ignore file types
 let g:netrw_list_hide = '.pyc,.git,.venv,.DS_Store'
 
+" Match brackets
 nnoremap <tab> %
 vnoremap <tab> %
 
@@ -103,6 +112,7 @@ highlight Comment ctermfg=Brown
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
+" Silver searcher
 nnoremap \ :Ag<SPACE>
 
 " Linting setup
@@ -128,7 +138,6 @@ if has("autocmd")
 endif
 
 " Make arrow keys move visual blocks around
-
 runtime plugin/dragvisuals.vim
 runtime plugin/rename.vim
 
@@ -164,3 +173,15 @@ vnoremap < <gv
 
 " Vim jedi disable auto-complete on .
 let g:jedi#popup_on_dot=0
+autocmd FileType python setlocal completeopt-=preview
+
+" Insert a blank line
+nmap <S-Enter> O<Esc>j
+nmap <CR> o<Esc>
+
+" Strip trailing whitespace.
+func! StripTrailingWhitespace()
+  exe "normal mz"
+  %s/\s\+$//ge
+  exe "normal `z"
+endfun

@@ -65,6 +65,10 @@ set fileformats=unix,mac,dos        "Handle Mac and DOS line-endings
 set nobackup
 set noswapfile
 
+" Inserts a space to push the rest of the line to the right, while leaving the cursor in the same position
+nnoremap <Space> i<Space><Esc>
+nnoremap <tab> i<tab><Esc>
+
 " Set to auto read when a file is changed from the outside.
 set autoread
 set gcr=a:blinkon0
@@ -77,11 +81,12 @@ autocmd BufWritePre *.css,*.html,*.js,*.json,*.md,*.py,*.rb,*.sh,*.txt
     \ :call StripTrailingWhitespace()
 
 " Status lines
-set statusline=%f\ %y " Path to the file
+set statusline=%f\%y " Path to the file
 set statusline+=%=   " Switch to the right side
 set statusline+=%l    " Current line
 set statusline+=/     " Separator
-set statusline+=%2l   " Total lines
+set statusline+=%2L   " Total lines
+set statusline+=\:%c   " Column number
 set statusline+=%{fugitive#statusline()}
 
 " Customize the wildmenu
@@ -92,9 +97,7 @@ set wildmode=list:full
 " Netrw ignore file types
 let g:netrw_list_hide = '.pyc,.git,.venv,.DS_Store'
 
-" Match brackets
-nnoremap <tab> %
-vnoremap <tab> %
+" Match bracket
 
 au FocusLost * :wa  "save on auto focus
 
@@ -162,8 +165,8 @@ endif
 nmap <Leader>y :TagbarToggle<CR>
 
 " Buffer toggle
-nnoremap <Leader>o :bp<CR>
-nnoremap <Leader>p :bn<CR>
+nnoremap <Leader>a :bp<CR>
+nnoremap <Leader>s :bn<CR>
 
 " Visual mode indentation
 noremap > >>

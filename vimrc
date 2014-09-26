@@ -1,6 +1,3 @@
-" Filename: .vimrc
-" Maintainer: Abhishek Kapatkar
-
 execute pathogen#infect()
 call pathogen#helptags()
 
@@ -131,7 +128,7 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
 " Silver searcher
-" nnoremap \ :Ag<SPACE>
+nnoremap \ :Ag<SPACE>
 
 " Linting setup
 let g:syntastic_enable_perl_checker = 1

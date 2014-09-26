@@ -5,7 +5,6 @@
 export PATH=/usr/local/bin:$PATH
 export PATH=$HOME/local/bin:$PATH
 
-
 # CLI Colors
 export CLICOLOR=1
 

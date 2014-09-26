@@ -1,3 +1,6 @@
+" Filename: .vimrc
+" Maintainer: Abhishek Kapatkar
+
 execute pathogen#infect()
 call pathogen#helptags()
 
@@ -65,9 +68,15 @@ set fileformats=unix,mac,dos        "Handle Mac and DOS line-endings
 set nobackup
 set noswapfile
 
+" Better split switching
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+
 " Inserts a space to push the rest of the line to the right, while leaving the cursor in the same position
 nnoremap <Space> i<Space><Esc>
-nnoremap <tab> i<tab><Esc>
+nnoremap <Tab> i<Tab><Esc>
 
 " Set to auto read when a file is changed from the outside.
 set autoread
@@ -89,19 +98,25 @@ set statusline+=%2L   " Total lines
 set statusline+=\:%c   " Column number
 set statusline+=%{fugitive#statusline()}
 
-" Customize the wildmenu
+" Customize the wildmenu/search
 set wildmenu
-set wildignore+=*.dll,*.pyc,.venv
 set wildmode=list:full
+
+set wildignore+=*.dll,*.pyc,.venv
+set wildignore+=*.DS_Store
+set wildignore+=migrations
+set wildignore+=.hg,.git,.svn
+set wildignore+=*.orig
+
 
 " Netrw ignore file types
 let g:netrw_list_hide = '.pyc,.git,.venv,.DS_Store'
 
-" Match bracket
-
 au FocusLost * :wa  "save on auto focus
 
-nmap <silent> ,/ :nohlsearch<CR>
+set nohlsearch
+
+"nmap <silent> ,/ :nohlsearch<CR>
 
 cmap w!! w !sudo tee % >/dev/null
 
@@ -116,7 +131,7 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
 " Silver searcher
-nnoremap \ :Ag<SPACE>
+" nnoremap \ :Ag<SPACE>
 
 " Linting setup
 let g:syntastic_enable_perl_checker = 1
@@ -161,7 +176,7 @@ if exists(":Tabularize")
   vmap <Leader>a: :Tabularize /:<CR>
 endif
 
-" Quick access to awesome Tagbar
+" Quick access to Tagbar
 nmap <Leader>y :TagbarToggle<CR>
 
 " Buffer toggle
@@ -188,3 +203,24 @@ func! StripTrailingWhitespace()
   %s/\s\+$//ge
   exe "normal `z"
 endfun
+
+" Load neoautocomplete pretty sweet.
+let g:neocomplcache_enable_at_startup = 1
+
+" Enable JS tern shortcuts
+let g:tern_map_keys=1
+
+" Easymotion
+let g:EasyMotion_smartcase = 1
+map  / <Plug>(easymotion-sn)
+omap / <Plug>(easymotion-tn)
+map <Leader>l <Plug>(easymotion-lineforward)
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+map <Leader>h <Plug>(easymotion-linebackward)
+
+" Fugitive
+nnoremap <leader>ga :Git add %:p<CR><CR>
+nnoremap <leader>gs :Gstatus<CR>
+nnoremap <leader>gb :Gblame<CR>
+vnoremap <leader>gb :Gblame<CR>

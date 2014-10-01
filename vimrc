@@ -6,10 +6,12 @@ if has('gui_running')
     set background=dark
 endif
 
-set runtimepath^=~/.vim/bundle/ctrlp.vim
-
 filetype plugin indent on
 syntax enable
+
+runtime bundle/ctrlp.vim
+runtime plugin/dragvisuals.vim
+runtime plugin/rename.vim
 
 let mapleader="'"
 
@@ -111,9 +113,7 @@ let g:netrw_list_hide = '.pyc,.git,.venv,.DS_Store'
 
 au FocusLost * :wa  "save on auto focus
 
-set nohlsearch
-
-"nmap <silent> ,/ :nohlsearch<CR>
+nmap <silent> ,/ :nohlsearch<CR>
 
 cmap w!! w !sudo tee % >/dev/null
 
@@ -152,10 +152,6 @@ if has("autocmd")
     autocmd BufNewFile,BufRead *.md setlocal filetype=markdown
 endif
 
-" Make arrow keys move visual blocks around
-runtime plugin/dragvisuals.vim
-runtime plugin/rename.vim
-
 vmap  <expr>  <LEFT>   DVB_Drag('left')
 vmap  <expr>  <RIGHT>  DVB_Drag('right')
 vmap  <expr>  <DOWN>   DVB_Drag('down')
@@ -163,7 +159,7 @@ vmap  <expr>  <UP>     DVB_Drag('up')
 vmap  <expr>  D        DVB_Duplicate()
 vmap  <expr>  <C-D>    DVB_Duplicate()
 
-" Work out what the comment character is, by filetype...
+" Work out what the comment character is, by filetype
 autocmd FileType             *sh,awk,python,ruby    let b:cmt = exists('b:cmt') ? b:cmt : '#'
 
 if exists(":Tabularize")
@@ -186,7 +182,7 @@ noremap < <<
 vnoremap > >gv
 vnoremap < <gv
 
-" Vim jedi disable auto-complete on .
+" Vim jedi disable auto-complete on
 let g:jedi#popup_on_dot=0
 autocmd FileType python setlocal completeopt-=preview
 
@@ -194,14 +190,14 @@ autocmd FileType python setlocal completeopt-=preview
 nmap <S-Enter> O<Esc>j
 nmap <CR> o<Esc>
 
-" Strip trailing whitespace.
+" Strip trailing whitespace
 func! StripTrailingWhitespace()
   exe "normal mz"
   %s/\s\+$//ge
   exe "normal `z"
 endfun
 
-" Load neoautocomplete pretty sweet.
+" Load neoautocomplete pretty sweet
 let g:neocomplcache_enable_at_startup = 1
 
 " Enable JS tern shortcuts

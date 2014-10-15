@@ -71,6 +71,7 @@ alias gb="git branch"
 alias gcp="git cherry-pick"
 alias grevall="git checkout -- ."
 alias gcm="git commit --amend"
+alias dmerged='git branch --merged | grep -v "\*" | xargs -n 1 git branch -d'
 
 # Nice log summary from previous day for daily standup
 alias gsup="clear && log --since '1 day ago' --oneline --author cabhishek@gmail.com"

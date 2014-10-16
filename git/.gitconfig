@@ -9,6 +9,7 @@
 [gui]
 [core]
 	excludefile = ~/.gitignore_global
+	editor = /usr/bin/vim
 
 [mergetool "kdiff3"]
 	path = /Applications/kdiff3.app/Contents/MacOS/kdiff3

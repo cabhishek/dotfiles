@@ -217,3 +217,7 @@ nnoremap <leader>ga :Git add %:p<CR><CR>
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gb :Gblame<CR>
 vnoremap <leader>gb :Gblame<CR>
+
+"  DelimitMate Indent + Auto braces
+let g:delimitMate_expand_cr = 1
+let g:delimitMate_expand_space = 1

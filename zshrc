@@ -42,6 +42,9 @@ SECRET_KEY="NU49gAHvAec0I6kp7Q3HZvpQY8nN4w2P"; export SECRET_KEY
 export PYENV_ROOT=$HOME/.pyenv
 export PATH=$PYENV_ROOT/bin:$PATH
 
+#Facebook flow
+export PATH="$PATH:$HOME/flow/"
+
 # Setup rbenv
 eval "$(rbenv init - zsh)"
 

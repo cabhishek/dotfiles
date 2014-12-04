@@ -18,6 +18,7 @@ syntax enable
 runtime bundle/ctrlp.vim
 runtime plugin/dragvisuals.vim
 runtime plugin/rename.vim
+runtime plugin/BufClose.vim
 
 let mapleader="'"
 
@@ -247,3 +248,5 @@ noremap <C-S-Tab> :tabprev<CR>
  map <D-8> 8gt
  map <D-9> 9gt
 
+" Close buffer but and leave other intact
+nnoremap <leader>q :BufClose<cr>

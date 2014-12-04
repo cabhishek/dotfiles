@@ -22,7 +22,7 @@ nnoremap ; :
 set gfn=Monaco:h12
 
 set expandtab     " insert with spaces instead of tabs
-set nowrap        " don\'t wrap lines
+set nowrap        " dont wrap lines
 set smartindent
 set tabstop=4
 set softtabstop=4

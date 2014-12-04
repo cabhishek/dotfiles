@@ -106,7 +106,7 @@ set wildignore+=*.DS_Store
 set wildignore+=migrations
 set wildignore+=.hg,.git,.svn
 set wildignore+=*.orig
-
+set wildignore+=migrations  " Django migrations
 
 " Netrw ignore file types
 let g:netrw_list_hide = '.pyc,.git,.venv,.DS_Store'
@@ -169,6 +169,9 @@ if exists(":Tabularize")
   vmap <Leader>a: :Tabularize /:<CR>
 endif
 
+" Fast saving
+nmap <leader>w :w!<cr>
+
 " Quick access to Tagbar
 nmap <Leader>y :TagbarToggle<CR>
 
@@ -221,3 +224,20 @@ vnoremap <leader>gb :Gblame<CR>
 "  DelimitMate Indent + Auto braces
 let g:delimitMate_expand_cr = 1
 let g:delimitMate_expand_space = 1
+
+" This mapping makes Ctrl-Tab switch between tabs.
+" Ctrl-Shift-Tab goes the other way.
+noremap <C-Tab> :tabnext<CR>
+noremap <C-S-Tab> :tabprev<CR>
+
+" switch between tabs with cmd+1, cmd+2,..."
+ map <D-1> 1gt
+ map <D-2> 2gt
+ map <D-3> 3gt
+ map <D-4> 4gt
+ map <D-5> 5gt
+ map <D-6> 6gt
+ map <D-7> 7gt
+ map <D-8> 8gt
+ map <D-9> 9gt
+

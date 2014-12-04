@@ -4,6 +4,12 @@ call pathogen#helptags()
 if has('gui_running')
     colorscheme base16-ocean
     set background=dark
+    set guioptions-=m  "no menu
+    set guioptions-=T  "no toolbar
+    set guioptions-=l  "no left scrollbar
+    set guioptions-=L
+    set guioptions-=r  "no right scrollbar
+    set guioptions-=R
 endif
 
 filetype plugin indent on

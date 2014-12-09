@@ -19,6 +19,7 @@ runtime bundle/ctrlp.vim
 runtime plugin/dragvisuals.vim
 runtime plugin/rename.vim
 runtime plugin/BufClose.vim
+runtime plugin/goyo.vim
 
 let mapleader="'"
 
@@ -250,3 +251,7 @@ noremap <C-S-Tab> :tabprev<CR>
 
 " Close buffer but and leave other intact
 nnoremap <leader>q :BufClose<cr>
+
+nnoremap <Leader>G :Goyo<CR>
+nnoremap <Leader>G! :Goyo!<CR>
+let g:goyo_width=120

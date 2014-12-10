@@ -2,7 +2,8 @@ execute pathogen#infect()
 call pathogen#helptags()
 
 if has('gui_running')
-    colorscheme base16-ocean
+    " colorscheme base16-ocean
+    colo seoul256
     set background=dark
     set guioptions-=m  "no menu
     set guioptions-=T  "no toolbar

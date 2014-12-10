@@ -62,3 +62,4 @@ done
 export PATH="/usr/local/heroku/bin:$PATH"
 
 [ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh # This loads NVM
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

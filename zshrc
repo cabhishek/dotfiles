@@ -32,6 +32,10 @@ export PATH=$PATH:$GAE
 #MYSQL
 export PATH=$PATH:/usr/local/mysql/bin
 
+# GOlang
+export GOPATH=$HOME/projects/go-play
+export PATH=$PATH:$GOPATH/bin
+
 # Z directory jumping util
 . $HOME/dotfiles/z.sh
 

@@ -14,6 +14,11 @@ if has('gui_running')
     set guioptions-=R
 endif
 
+augroup myvimrc
+    au!
+    au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | if has('gui_running') | so $MYGVIMRC | endif
+augroup END
+
 filetype plugin indent on
 syntax enable
 
@@ -257,3 +262,9 @@ nnoremap <leader>q :BufClose<cr>
 nnoremap <Leader>G :Goyo<CR>
 nnoremap <Leader>G! :Goyo!<CR>
 let g:goyo_width=120
+
+au FileType go nmap <Leader>e <Plug>(go-rename)
+au FileType go nmap <leader>r <Plug>(go-run)
+
+
+

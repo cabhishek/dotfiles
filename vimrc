@@ -178,8 +178,8 @@ vmap  <expr>  <C-D>    DVB_Duplicate()
 autocmd FileType             *sh,awk,python,ruby    let b:cmt = exists('b:cmt') ? b:cmt : '#'
 
 if exists(":Tabularize")
-  nmap <Leader>a= :Tabularize /=<CR>
-  vmap <Leader>a= :Tabularize /=<CR>
+  nmap <Leader>a= :Tabularize /=.*/<CR>
+  vmap <Leader>a= :Tabularize /=.*/<CR>
   nmap <Leader>a: :Tabularize /:<CR>
   vmap <Leader>a: :Tabularize /:<CR>
 endif
@@ -265,6 +265,3 @@ let g:goyo_width=120
 
 au FileType go nmap <Leader>e <Plug>(go-rename)
 au FileType go nmap <leader>r <Plug>(go-run)
-
-
-

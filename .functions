@@ -28,7 +28,8 @@ function o() {
 
 # Fire up notebook with dev django settings
 workbook(){
-  python manage.py shell_plus --notebook --settings=project.settings-dev
+    echo "settings >> $@"
+    python manage.py shell_plus --notebook --settings="$@"
 }
 
 # Generic iPython setup
@@ -46,7 +47,7 @@ publicip(){
 
 # Start djnago server
 startwork(){
-    cd /Users/akapatkar/financials && source .venv/bin/activate && ./up.sh
+    cd /Users/akapatkar/projects/sma && source .venv/bin/activate && ./up.sh
 }
 
 # Clean up wifi issue

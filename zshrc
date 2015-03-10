@@ -22,9 +22,6 @@ export WORKON_HOME=$HOME/.virtualenvs
 export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
 source /usr/local/bin/virtualenvwrapper.sh
 
-# Aws Setup
-export PATH=$PATH:$HOME/AWS-ElasticBeanstalk-CLI-2.6.3/eb/macosx/python2.7/
-
 # App engine
 GAE=/usr/local/google_appengine
 export PATH=$PATH:$GAE

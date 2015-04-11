@@ -52,6 +52,9 @@ eval "$(rbenv init - zsh)"
 # Setup pyenv
 eval "$(pyenv init - zsh)"
 
+# Alias Hub
+eval "$(hub alias -s)"
+
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
 # Load all helper .dot files
@@ -64,3 +67,5 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 [ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh # This loads NVM
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+

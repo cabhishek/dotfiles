@@ -22,6 +22,15 @@ function install {
 
 	echo ">>> Installing nvm"
 	wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.24.1/install.sh | bash
+
+	echo ">>> Installing storm for ssh management"
+	brew install stormssh
+
+	echo ">>> Installing silver searcher"
+	brew install the_silver_searcher
+
+	echo ">>> Installing git extras"
+	brew install git-extras
 }
 
 install

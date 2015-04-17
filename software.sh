@@ -31,6 +31,9 @@ function install {
 
 	echo ">>> Installing git extras"
 	brew install git-extras
+
+	echo ">>> Installing exuberant ctags"
+	brew install ctags
 }
 
 install

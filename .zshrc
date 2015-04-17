@@ -22,9 +22,8 @@ export WORKON_HOME=$HOME/.virtualenvs
 export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
 source /usr/local/bin/virtualenvwrapper.sh
 
-# App engine
-GAE=/usr/local/google_appengine
-export PATH=$PATH:$GAE
+# Gradle
+export PATH=$PATH:$HOME/projects/stash/NEBULA/wrapper
 
 #MYSQL
 export PATH=$PATH:/usr/local/mysql/bin
@@ -35,9 +34,6 @@ export PATH=$PATH:$GOPATH/bin
 
 # Z directory jumping util
 . $HOME/dotfiles/z.sh
-
-# Secret_key
-SECRET_KEY="NU49gAHvAec0I6kp7Q3HZvpQY8nN4w2P"; export SECRET_KEY
 
 #pyenv path
 export PYENV_ROOT=$HOME/.pyenv
@@ -50,7 +46,7 @@ export PATH="$PATH:$HOME/flow/"
 eval "$(rbenv init - zsh)"
 
 # Setup pyenv
-eval "$(pyenv init - zsh)"
+# eval "$(pyenv init - zsh)"
 
 # Alias Hub
 eval "$(hub alias -s)"

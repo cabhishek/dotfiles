@@ -27,6 +27,7 @@ runtime plugin/dragvisuals.vim
 runtime plugin/rename.vim
 runtime plugin/BufClose.vim
 runtime plugin/goyo.vim
+runtime plugin/mru.vim
 
 let mapleader="'"
 
@@ -34,37 +35,36 @@ let mapleader="'"
 nnoremap ; :
 
 " Basic setup
-set gfn=Monaco:h12
-
-set expandtab     " insert with spaces instead of tabs
-set nowrap        " dont wrap lines
+set gfn=Monaco:h12 " Font size 
+set expandtab      " Insert with spaces instead of tabs
+set nowrap         " Dont wrap lines
 set smartindent
 set tabstop=4
 set softtabstop=4
-set shiftwidth=4     " a tab is four spaces
+set shiftwidth=4     " A tab is four spaces
 
-set backspace=indent,eol,start
-                  " allow backspacing over everything in insert mode
-set autoindent    " always set autoindenting on
-set copyindent    " copy the previous indentation on autoindenting
-set number        " always show line numbers
-set shiftwidth=4  " number of spaces to use for autoindenting
-set shiftround    " use multiple of shiftwidth when indenting with '<' and '>'
+set backspace=indent,eol,start " Allow backspacing over everything in insert mode
+set autoindent    " Always set autoindenting on
+set copyindent    " Copy the previous indentation on autoindenting
+set number        " Always show line numbers
+set numberwidth=2 
+set shiftwidth=4  " Number of spaces to use for autoindenting
+set shiftround    " Use multiple of shiftwidth when indenting with '<' and '>'
 
-set ignorecase    " ignore case when searching
-set smartcase     " ignore case if search pattern is all lowercase,
+set ignorecase    " Ignore case when searching
+set smartcase     " Ignore case if search pattern is all lowercase,
                   "    case-sensitive otherwise
-set smarttab      " insert tabs on the start of a line according to
+set smarttab      " Insert tabs on the start of a line according to
                   "    shiftwidth, not tabstop
-set hlsearch      " highlight search terms
-set incsearch     " show search matches as you type
+set hlsearch      " Highlight search terms
+set incsearch     " Show search matches as you type
 
-set history=1000         " remember more commands and search history
-set undolevels=1000      " use many muchos levels of undo
+set history=1000         " Remember more commands and search history
+set undolevels=1000      " Use many muchos levels of undo
 
-set title                " change the terminal's title
-set visualbell           " don't beep
-set noerrorbells         " don't beep
+set title                " Change the terminal's title
+set visualbell           " Don't beep
+set noerrorbells         " Don't beep
 
 set ruler                " Show the cursor position
 set shortmess=atI        " Don’t show the intro message when starting Vim
@@ -77,8 +77,8 @@ set scrolloff=3
 
 set infercase            "Adjust completions to match case
 
-set fileformats=unix,mac,dos        "Handle Mac and DOS line-endings
-                                    "but prefer Unix endings
+set fileformats=unix,mac,dos  " Handle Mac and DOS line-endings
+                              " but prefer Unix endings
 set nobackup
 set noswapfile
 
@@ -96,8 +96,7 @@ nnoremap <Tab> i<Tab><Esc>
 set autoread
 set gcr=a:blinkon0
 
-" How many tenths of a second to blink when matching brackets
-set mat=2
+set mat=2 " How many tenths of a second to blink when matching brackets
 
 " Strip trailing whitespace on save for specified file types.
 autocmd BufWritePre *.css,*.html,*.js,*.json,*.md,*.py,*.rb,*.sh,*.txt
@@ -116,7 +115,7 @@ set statusline+=%{fugitive#statusline()}
 set wildmenu
 set wildmode=list:full
 
-set wildignore+=*.dll,*.pyc,.venv
+set wildignore+=*.dll,*.pyc,.venv,env
 set wildignore+=*.DS_Store
 set wildignore+=migrations
 set wildignore+=.hg,.git,.svn
@@ -124,7 +123,7 @@ set wildignore+=*.orig
 set wildignore+=migrations  " Django migrations
 
 " Netrw ignore file types
-let g:netrw_list_hide = '.pyc,.git,.venv,.DS_Store'
+let g:netrw_list_hide = '.pyc,.git,.DS_Store'
 
 au FocusLost * :wa  "save on auto focus
 
@@ -152,10 +151,10 @@ let g:syntastic_quiet_messages = { "type": "style" }
 let g:syntastic_javascript_checkers = ['jshint']
 
 " Code fold settings
-set foldmethod=indent   "fold based on indent
-set foldnestmax=10      "deepest fold is 10 levels
-set nofoldenable        "dont fold by default
-set foldlevel=1         "this is just what i use
+set foldmethod=indent   " Fold based on indent
+set foldnestmax=10      " Deepest fold is 10 levels
+set nofoldenable        " Dont fold by default
+set foldlevel=1         " This is just what i use
 
 " Automatic commands
 if has("autocmd")
@@ -265,3 +264,9 @@ let g:goyo_width=120
 
 au FileType go nmap <Leader>e <Plug>(go-rename)
 au FileType go nmap <leader>r <Plug>(go-run)
+
+" Toggle undo graph UI
+nnoremap <F1> :UndotreeToggle<cr>
+
+" Toggle MRU UI
+nnoremap <F2> :MRU<cr>

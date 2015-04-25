@@ -5,6 +5,12 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
+# CLI Colors
+export CLICOLOR=1
+# Set "ls" colors
+export LSCOLORS=Gxfxcxdxbxegedabagacad
+export GREP_OPTIONS="--color=auto";
+
 # ZSH config
 ZSH_THEME="robbyrussell"
 COMPLETION_WAITING_DOTS="true"
@@ -12,6 +18,7 @@ plugins=(git python)
 source $ZSH/oh-my-zsh.sh
 
 export PATH=$PATH:/opt/local/bin
+
 # Append /usr/local/bin before /usr/bin
 export PATH=/usr/local/bin:$PATH
 
@@ -46,12 +53,17 @@ export PATH="$PATH:$HOME/flow/"
 eval "$(rbenv init - zsh)"
 
 # Setup pyenv
-# eval "$(pyenv init - zsh)"
+eval "$(pyenv init - zsh)"
 
 # Alias Hub
 eval "$(hub alias -s)"
 
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+
+
+# Setup NVM
+[ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh # This loads NVM
+export NVM_DIR="~/.nvm"
 
 # Load all helper .dot files
 for file in ~/.{aliases,functions}; do
@@ -61,7 +73,6 @@ done
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
-[ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh # This loads NVM
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 

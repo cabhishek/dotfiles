@@ -33,6 +33,7 @@ alias cl="clear"
 alias tr="tree -CL 1 | less -FRNX"
 alias tr2="tree -CL 2 | less -FRNX"
 alias tr3="tree -CL 3 | less -FRNX"
+alias tr4="tree -CL 4 | less -FRNX"
 alias f=ag
 
 # Applications
@@ -42,9 +43,6 @@ alias sub='open -a "Sublime Text"'
 
 # Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
 alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm update npm -g; npm update -g; sudo gem update'
-
-# Work specific
-alias work='/Users/akapatkar/financials && source .venv/bin/activate'
 
 #Heroku
 alias hpush="git push heroku"

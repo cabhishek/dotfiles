@@ -34,6 +34,9 @@ function install {
 
 	echo ">>> Installing exuberant ctags"
 	brew install ctags
+
+	echo ">>> Installing pylint"
+	sudo pip install pylint
 }
 
 install

@@ -2,14 +2,22 @@
 # Maintainer: Abhishek Kapatkar
 
 # Shortcuts
-alias d="cd ~/Documents/Dropbox"
+alias dot="cd ~/dotfiles"
+alias d="cd ~/Dropbox"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
-alias p="cd ~/Projects"
-alias ho="cd ~"
+alias p="cd ~/projects"
+alias dev="cd ~/dev"
+alias h="cd ~"
 alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
 
-alias h="history"
+# cd to git root directory
+alias cdr='cd "$(git root)"'
+
+alias hi="history"
 alias j="jobs"
 
 alias sdown="sudo shutdown -h now"
@@ -35,6 +43,7 @@ alias tr2="tree -CL 2 | less -FRNX"
 alias tr3="tree -CL 3 | less -FRNX"
 alias tr4="tree -CL 4 | less -FRNX"
 alias f=ag
+alias t='date "+DATE: %Y-%m-%d%nTIME: %r"'
 
 # Applications
 alias vim='open -a "/Applications/MacVim.app/Contents/MacOS/MacVim"'
@@ -71,9 +80,9 @@ alias grevall="git checkout -- ."
 alias gcm="git commit --amend"
 alias dmerged='git branch --merged | grep -v "\*" | xargs -n 1 git branch -d'
 
-# Nice log summary from previous day for daily standup
+# Log summary from previous day commits
 alias gsup="clear && log --since '1 day ago' --oneline --author cabhishek@gmail.com"
 
 # Git logging
-alias gl="git log --pretty='format:%Cgreen%h%Creset %an - %s' --graph"
+alias gl="git log --pretty='format:%Cgreen%h%C(blue) %an %C(reset) - %s %C(black)%C(bold)%cr' --graph"
 alias log="git log --pretty=format:'%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]' --decorate --date=short"

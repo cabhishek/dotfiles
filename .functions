@@ -45,11 +45,6 @@ publicip(){
     curl ipecho.net/plain; echo
 }
 
-# Start djnago server
-startwork(){
-    cd /Users/akapatkar/projects/sma && source .venv/bin/activate && ./up.sh
-}
-
 # Clean up wifi issue
 fixwifi(){
     trash /Library/Preferences/SystemConfiguration
@@ -58,4 +53,39 @@ fixwifi(){
 # List all files with nice color highlighting
 function tre() {
     tree -aC -I '.git|.local-cache|.venv|*.pyc|.DS_Store|__pycache__|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
+}
+
+# Go up [n] directories
+function up()
+{
+    local cdir="$(pwd)"
+    if [[ "${1}" == "" ]]; then
+        cdir="$(dirname "${cdir}")"
+    elif ! [[ "${1}" =~ ^[0-9]+$ ]]; then
+        echo "Error: argument must be a number"
+    elif ! [[ "${1}" -gt "0" ]]; then
+        echo "Error: argument must be positive"
+    else
+        for i in {1..${1}}; do
+            local ncdir="$(dirname "${cdir}")"
+            if [[ "${cdir}" == "${ncdir}" ]]; then
+                break
+            else
+                cdir="${ncdir}"
+            fi
+        done
+    fi
+    cd "${cdir}"
+}
+
+# Execute a command in a specific directory
+function in() {
+    (
+        cd ${1} && shift && ${@}
+    )
+}
+
+# Check if a file contains non-ascii characters
+function nonascii() {
+    LC_ALL=C grep -n '[^[:print:][:space:]]' ${1}
 }

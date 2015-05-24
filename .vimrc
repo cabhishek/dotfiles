@@ -1,10 +1,53 @@
-execute pathogen#infect()
-call pathogen#helptags()
+call plug#begin('~/.vim/plugged')
+
+" Code edit
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-eunuch'
+Plug 'scrooloose/nerdcommenter'
+Plug 'mbbill/undotree', { 'on': 'UndotreeToggle'   }
+Plug 'Shougo/neocomplcache.vim'
+Plug 'davidhalter/jedi-vim'
+Plug 'Raimondi/delimitMate'
+Plug 'mattn/emmet-vim'
+
+" Lang
+Plug 'scrooloose/syntastic'
+Plug 'fatih/vim-go'
+Plug 'pangloss/vim-javascript'
+
+" Search
+Plug 'kien/ctrlp.vim'
+Plug 'wincent/command-t'
+Plug 'majutsushi/tagbar'
+Plug 'Lokaltog/vim-easymotion'
+Plug 'rking/ag.vim'
+
+" Colors
+Plug 'chriskempson/vim-tomorrow-theme'
+Plug 'junegunn/seoul256.vim'
+Plug 'chriskempson/base16-vim'
+
+" Git
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+
+" Markdown
+Plug 'junegunn/vim-xmark', { 'do': 'make' }
+
+" Browsing
+Plug 'tpope/vim-vinegar'
+Plug 'justinmk/vim-gtfo'
+Plug 'junegunn/goyo.vim'
+Plug 'Yggdroot/indentLine', { 'on': 'IndentLinesEnable' }
+
+call plug#end()
 
 if has('gui_running')
     " colorscheme base16-ocean
-    colo seoul256
-    let g:seoul256_background = 236
+    colo Tomorrow-Night
+    " colo seoul256
+    " let g:seoul256_background = 238
     set background=dark
     set guioptions-=m  "no menu
     set guioptions-=T  "no toolbar
@@ -22,7 +65,6 @@ augroup END
 filetype plugin indent on
 syntax enable
 
-runtime bundle/ctrlp.vim
 runtime plugin/dragvisuals.vim
 runtime plugin/rename.vim
 runtime plugin/BufClose.vim
@@ -35,6 +77,7 @@ let mapleader="'"
 nnoremap ; :
 
 " Basic setup
+set encoding=utf-8
 set gfn=Monaco:h12 " Font size 
 set expandtab      " Insert with spaces instead of tabs
 set nowrap         " Dont wrap lines
@@ -82,11 +125,18 @@ set fileformats=unix,mac,dos  " Handle Mac and DOS line-endings
 set nobackup
 set noswapfile
 
+" Line indent for Python
+let g:indentLine_char = '︙'
+let g:indentLine_enabled = 1
+
 " Better split switching
 map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
+
+" escape out of mode
+inoremap jk <Esc>
 
 " Inserts a space to push the rest of the line to the right, while leaving the cursor in the same position
 nnoremap <Space> i<Space><Esc>
@@ -110,6 +160,10 @@ set statusline+=/     " Separator
 set statusline+=%2L   " Total lines
 set statusline+=\:%c   " Column number
 set statusline+=%{fugitive#statusline()}
+
+let g:syntastic_error_symbol = '✗'
+let g:syntastic_warning_symbol = '!'
+
 
 " Customize the wildmenu/search
 set wildmenu
@@ -149,6 +203,7 @@ let g:syntastic_enable_perl_checker = 1
 let g:syntastic_python_checkers = ['pylint']
 let g:syntastic_quiet_messages = { "type": "style" }
 let g:syntastic_javascript_checkers = ['jshint']
+
 
 " Code fold settings
 set foldmethod=indent   " Fold based on indent

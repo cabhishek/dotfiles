@@ -1,28 +1,29 @@
 #!/bin/bash
-############################
-# This script creates symlinks from the home directory to any desired dotfiles in ~/dotfiles
-############################
 
-dir=~/dotfiles                    # dotfiles directory
-olddir=~/dotfiles_old             # old dotfiles backup directory
-files=".bashrc .vimrc .zshrc .gitignore .gitconfig .gitignore_global .aliases .functions .pylintrc .jshintrc"    # list of files/folders to symlink in homedir
+# Filename: install
+# Maintainer: Abhishek Kapatkar
 
-# create dotfiles_old in homedir
-echo "Creating $olddir for backup of any existing dotfiles in ~"
-mkdir -p $olddir
-echo "...done"
+echo ">>> Installing Homebrew"
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"	
 
-# change to the dotfiles directory
-echo "Changing to the $dir directory"
-cd $dir
-echo "...done"
+echo ">>> Updating homebrew"
+brew update
 
-# move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks from the homedir to any files in the ~/dotfiles directory specified in $files
-for file in $files; do
-    echo "Moving any existing dotfiles from ~ to $olddir"
-    mv ~/$file ~/dotfiles_old/
-    echo "Creating symlink to $file in home directory."
-    ln -s $dir/$file ~/$file
-done
+brew install \
+	ag wget tree legit hub ctags \
+	git imagemagick \
+	pylint pyenv stormssh redis \
+	sl tmux tree unrar wget zsh jq \
+	the_silver_searcher git-extras
 
+echo ">>> Installing bash fuzzy search"
+brew reinstall --HEAD fzf
+# Install shell extensions
+/usr/local/Cellar/fzf/HEAD/install
+
+echo ">>> Installing nvm"
+wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.24.1/install.sh | bash
+
+# Setup dotfiles
+./dotfiles.sh
 

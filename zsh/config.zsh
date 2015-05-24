@@ -16,3 +16,10 @@ bindkey '^X' edit-command-line
 # You know.
 bindkey "^A" beginning-of-line
 bindkey "^E" end-of-line
+
+# Load autocomplete and other zsh stuff
+autoload -Uz compinit
+compinit -i
+
+# Reduce vim mode toggle delay
+export KEYTIMEOUT=1

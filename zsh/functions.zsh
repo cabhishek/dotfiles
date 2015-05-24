@@ -27,27 +27,22 @@ function o() {
 }
 
 # Fire up notebook with dev django settings
-workbook(){
+function workbook(){
     echo "settings >> $@"
     python manage.py shell_plus --notebook --settings="$@"
 }
 
 # Generic iPython setup
-notebook(){
+function notebook(){
   ipython notebook --profile=cabhishek
 }
 
-myip(){
+function myip(){
     ipconfig getifaddr en0
 }
 
-publicip(){
+function publicip(){
     curl ipecho.net/plain; echo
-}
-
-# Clean up wifi issue
-fixwifi(){
-    trash /Library/Preferences/SystemConfiguration
 }
 
 # List all files with nice color highlighting
@@ -87,5 +82,5 @@ function in() {
 
 # Check if a file contains non-ascii characters
 function nonascii() {
-    LC_ALL=C grep -n '[^[:print:][:space:]]' ${1}
+    LC_ALL=C grep -n '[^[:print:][:space:]]' "${1}"
 }

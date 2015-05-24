@@ -1,6 +1,3 @@
-# Filename: .aliases
-# Maintainer: Abhishek Kapatkar
-
 # Shortcuts
 alias dot="cd ~/dotfiles"
 alias d="cd ~/Dropbox"

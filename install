@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+
+set -e
+
+CONFIG="install.conf.yaml"
+DOTBOT_DIR="dotbot"
+
+DOTBOT_BIN="bin/dotbot"
+BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+cd "${BASEDIR}"
+git submodule update --init --recursive "${DOTBOT_DIR}"
+
+"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
+
+if [ "$1" == "all" ]; then
+	echo ">>> Installing Homebrew"
+	ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"	
+
+	echo ">>> Updating homebrew"
+	brew update
+
+	brew install \
+		ag wget tree legit hub ctags \
+		git imagemagick \
+		pylint pyenv stormssh redis \
+		sl tmux tree unrar wget zsh jq \
+		the_silver_searcher git-extras \
+		heroku-toolbelt
+
+	echo ">>> Installing MacVim"
+	brew install macvim
+
+	echo ">>> Installing bash fuzzy search"
+	brew reinstall --HEAD fzf
+	# Install shell extensions
+	/usr/local/Cellar/fzf/HEAD/install
+
+	echo ">>> Installing nvm"
+	wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.24.1/install.sh | bash
+fi

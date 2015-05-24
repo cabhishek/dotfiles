@@ -1,7 +1,3 @@
-# Filename: .zshrc
-# Maintainer: Abhishek Kapatkar
-
-
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
@@ -49,7 +45,6 @@ export PYENV_ROOT=$HOME/.pyenv
 export PATH=$PYENV_ROOT/bin:$PATH
 
 # Setup rbenv
-# eval "$(rbenv init - zsh)"
 eval "$(rbenv init - --no-rehash)"
 
 # Setup pyenv
@@ -64,24 +59,12 @@ if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 [ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh # This loads NVM
 export NVM_DIR="~/.nvm"
 
-# Load all helper .dot files
-for file in ~/.{aliases,functions,work}; do
-    [ -r "$file" ] && [ -f "$file" ] && source "$file"
-done
-
 export DOTFILES="$(dirname $(readlink $HOME/.zshrc))"
 
 # Load all zsh files
 for file in $DOTFILES/*/*.zsh; do
     source "$file"
 done
-
-# Load autocomplete and other zsh stuff
-autoload -Uz compinit
-compinit -i
-
-# Reduce vim mode toggle delay
-export KEYTIMEOUT=1
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"

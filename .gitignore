@@ -1,5 +1,5 @@
 .DS_Store
-config
-.vim/.netrwhist
-.work
-.vim/plugged/
+vim/.netrwhist
+zsh/nflx.zsh
+vim/plugged/
+dotbot

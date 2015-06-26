@@ -40,14 +40,13 @@ Plug 'tpope/vim-vinegar'
 Plug 'justinmk/vim-gtfo'
 Plug 'junegunn/goyo.vim'
 Plug 'Yggdroot/indentLine', { 'on': 'IndentLinesEnable' }
+Plug 'terryma/vim-expand-region'
 
 call plug#end()
 
 if has('gui_running')
-    " colorscheme base16-ocean
-    colo Tomorrow-Night
-    " colo seoul256
-    " let g:seoul256_background = 238
+    colo seoul256
+    let g:seoul256_background = 235
     set background=dark
     set guioptions-=m  "no menu
     set guioptions-=T  "no toolbar
@@ -128,6 +127,7 @@ set noswapfile
 " Line indent for Python
 let g:indentLine_char = '︙'
 let g:indentLine_enabled = 1
+
 
 " Better split switching
 map <C-j> <C-W>j

@@ -39,7 +39,6 @@ Plug 'junegunn/vim-xmark', { 'do': 'make' }
 Plug 'tpope/vim-vinegar'
 Plug 'justinmk/vim-gtfo'
 Plug 'junegunn/goyo.vim'
-Plug 'Yggdroot/indentLine', { 'on': 'IndentLinesEnable' }
 Plug 'terryma/vim-expand-region'
 
 call plug#end()
@@ -123,11 +122,6 @@ set fileformats=unix,mac,dos  " Handle Mac and DOS line-endings
                               " but prefer Unix endings
 set nobackup
 set noswapfile
-
-" Line indent for Python
-let g:indentLine_char = '︙'
-let g:indentLine_enabled = 1
-
 
 " Better split switching
 map <C-j> <C-W>j

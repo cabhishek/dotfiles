@@ -22,6 +22,7 @@ Plug 'wincent/command-t'
 Plug 'majutsushi/tagbar'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'rking/ag.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 
 " Colors
 Plug 'chriskempson/vim-tomorrow-theme'
@@ -315,7 +316,19 @@ au FileType go nmap <Leader>e <Plug>(go-rename)
 au FileType go nmap <leader>r <Plug>(go-run)
 
 " Toggle undo graph UI
-nnoremap <F1> :UndotreeToggle<cr>
+nnoremap <C-u> :UndotreeToggle<cr>
 
 " Toggle MRU UI
-nnoremap <F2> :MRU<cr>
+nnoremap <C-h> :MRU<cr>
+
+" FZF integration
+let g:fzf_launcher = "fzf_launch %s"
+let g:fzf_action = {
+  \ 'ctrl-m': 'e',
+  \ 'ctrl-t': 'tabedit',
+  \ 'alt-j':  'botright split',
+  \ 'alt-k':  'topleft split',
+  \ 'alt-h':  'vertical topleft split',
+  \ 'alt-l':  'vertical botright split' }
+nnoremap <C-f> :FZF<cr>
+

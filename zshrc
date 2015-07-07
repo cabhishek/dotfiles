@@ -23,6 +23,8 @@ export PATH=$PATH:/opt/local/bin
 # Append /usr/local/bin before /usr/bin
 export PATH=/usr/local/bin:$PATH
 
+export PATH=$PATH:~/.vim/plugin
+
 # add .local to PATH
 export PATH=~/.local/bin:$PATH
 

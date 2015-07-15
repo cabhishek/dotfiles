@@ -40,6 +40,7 @@ alias tr2="tree -CL 2 | less -FRNX"
 alias tr3="tree -CL 3 | less -FRNX"
 alias tr4="tree -CL 4 | less -FRNX"
 alias f=ag
+alias s=fzf
 alias t='date "+DATE: %Y-%m-%d%nTIME: %r"'
 
 # Applications

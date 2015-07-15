@@ -51,6 +51,7 @@ eval "$(rbenv init - --no-rehash)"
 
 # Setup pyenv
 eval "$(pyenv init - zsh)"
+eval "$(pyenv virtualenv-init -)"
 
 # Alias Hub
 eval "$(hub alias -s)"

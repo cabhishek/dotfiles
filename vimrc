@@ -77,7 +77,8 @@ nnoremap ; :
 
 " Basic setup
 set encoding=utf-8
-set gfn=Monaco:h12 " Font size 
+"set gfn=Monaco:h12 " Font size
+set gfn=Inconsolata:h13 " Font size 
 set expandtab      " Insert with spaces instead of tabs
 set nowrap         " Dont wrap lines
 set smartindent
@@ -319,7 +320,7 @@ au FileType go nmap <leader>r <Plug>(go-run)
 nnoremap <C-u> :UndotreeToggle<cr>
 
 " Toggle MRU UI
-nnoremap <C-h> :MRU<cr>
+nnoremap <C-l> :MRU<cr>
 
 " FZF integration
 let g:fzf_launcher = "fzf_launch %s"

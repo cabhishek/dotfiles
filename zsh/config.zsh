@@ -23,3 +23,5 @@ compinit -i
 
 # Reduce vim mode toggle delay
 export KEYTIMEOUT=1
+
+source ~/.iterm2_shell_integration.`basename $SHELL`

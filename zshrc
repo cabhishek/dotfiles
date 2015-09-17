@@ -46,6 +46,9 @@ export PATH=$PATH:$GOPATH/bin
 export PYENV_ROOT=$HOME/.pyenv
 export PATH=$PYENV_ROOT/bin:$PATH
 
+#JAVA
+export JAVA_HOME=$(/usr/libexec/java_home)
+
 # Setup rbenv
 eval "$(rbenv init - --no-rehash)"
 
@@ -75,3 +78,4 @@ export PATH="/usr/local/heroku/bin:$PATH"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 
+export PATH="/usr/local/sbin:$PATH"

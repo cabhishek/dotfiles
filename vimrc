@@ -11,6 +11,10 @@ Plug 'davidhalter/jedi-vim'
 Plug 'Raimondi/delimitMate'
 Plug 'mattn/emmet-vim'
 
+" formatters
+Plug 'maksimr/vim-jsbeautify'
+Plug 'einars/js-beautify'
+
 " Lang
 Plug 'scrooloose/syntastic'
 Plug 'fatih/vim-go'
@@ -78,7 +82,7 @@ nnoremap ; :
 " Basic setup
 set encoding=utf-8
 "set gfn=Monaco:h12 " Font size
-set gfn=Inconsolata:h13 " Font size 
+set gfn=Inconsolata:h14 " Font size 
 set expandtab      " Insert with spaces instead of tabs
 set nowrap         " Dont wrap lines
 set smartindent
@@ -157,10 +161,6 @@ set statusline+=%2L   " Total lines
 set statusline+=\:%c   " Column number
 set statusline+=%{fugitive#statusline()}
 
-let g:syntastic_error_symbol = '✗'
-let g:syntastic_warning_symbol = '!'
-
-
 " Customize the wildmenu/search
 set wildmenu
 set wildmode=list:full
@@ -199,7 +199,8 @@ let g:syntastic_enable_perl_checker = 1
 let g:syntastic_python_checkers = ['pylint']
 let g:syntastic_quiet_messages = { "type": "style" }
 let g:syntastic_javascript_checkers = ['jshint']
-
+let g:syntastic_error_symbol = '✗'
+let g:syntastic_warning_symbol = '!'
 
 " Code fold settings
 set foldmethod=indent   " Fold based on indent
@@ -320,7 +321,7 @@ au FileType go nmap <leader>r <Plug>(go-run)
 nnoremap <C-u> :UndotreeToggle<cr>
 
 " Toggle MRU UI
-nnoremap <C-l> :MRU<cr>
+nnoremap <C-b> :MRU<cr>
 
 " FZF integration
 let g:fzf_launcher = "fzf_launch %s"
@@ -332,4 +333,7 @@ let g:fzf_action = {
   \ 'alt-h':  'vertical topleft split',
   \ 'alt-l':  'vertical botright split' }
 nnoremap <C-f> :FZF<cr>
+
+" JS beautify
+autocmd FileType javascript noremap <buffer>  <c-j> :call JsBeautify()<cr>
 

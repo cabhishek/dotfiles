@@ -24,6 +24,7 @@ alias rstart="sudo shutdown -r now"
 alias mkvenv=mkvirtualenv
 alias lsvenv=lsvirtualenv
 alias rmvenv=rmvirtualenv
+alias venv="source env/bin/activate"
 
 # Mysql
 alias start-mysql="sudo /Library/StartupItems/MySQLCOM/MySQLCOM start"
@@ -84,3 +85,6 @@ alias gsup="clear && log --since '1 day ago' --oneline --author cabhishek@gmail.
 # Git logging
 alias gl="git log --pretty='format:%Cgreen%h%C(blue) %an %C(reset) - %s %C(black)%C(bold)%cr' --graph"
 alias log="git log --pretty=format:'%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]' --decorate --date=short"
+
+alias hstart="/usr/local/Cellar/hadoop/2.7.1/sbin/start-dfs.sh;/usr/local/Cellar/hadoop/2.7.1/sbin/start-yarn.sh"
+alias hstop="/usr/local/Cellar/hadoop/2.7.1/sbin/stop-yarn.sh;/usr/local/Cellar/hadoop/2.7.1/sbin/stop-dfs.sh"

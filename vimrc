@@ -6,14 +6,15 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-eunuch'
 Plug 'scrooloose/nerdcommenter'
 Plug 'mbbill/undotree', { 'on': 'UndotreeToggle'   }
-Plug 'Shougo/neocomplcache.vim'
 Plug 'davidhalter/jedi-vim'
 Plug 'Raimondi/delimitMate'
-Plug 'mattn/emmet-vim'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'Shougo/neocomplcache.vim'
 
 " formatters
 Plug 'maksimr/vim-jsbeautify'
 Plug 'einars/js-beautify'
+Plug 'godlygeek/tabular'
 
 " Lang
 Plug 'scrooloose/syntastic'
@@ -26,7 +27,6 @@ Plug 'wincent/command-t'
 Plug 'majutsushi/tagbar'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'rking/ag.vim'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 
 " Colors
 Plug 'chriskempson/vim-tomorrow-theme'
@@ -43,22 +43,24 @@ Plug 'junegunn/vim-xmark', { 'do': 'make' }
 " Browsing
 Plug 'tpope/vim-vinegar'
 Plug 'justinmk/vim-gtfo'
-Plug 'junegunn/goyo.vim'
 Plug 'terryma/vim-expand-region'
+Plug 'Shougo/vimfiler.vim'
+Plug 'Shougo/unite.vim'
+Plug 'christoomey/vim-tmux-navigator'
 
 call plug#end()
 
-if has('gui_running')
-    colo seoul256
-    let g:seoul256_background = 235
-    set background=dark
-    set guioptions-=m  "no menu
-    set guioptions-=T  "no toolbar
-    set guioptions-=l  "no left scrollbar
-    set guioptions-=L
-    set guioptions-=r  "no right scrollbar
-    set guioptions-=R
-endif
+" Main theme settings
+colo seoul256
+let g:seoul256_background = 235
+set background=dark
+set guioptions-=m  "no menu
+set guioptions-=T  "no toolbar
+set guioptions-=l  "no left scrollbar
+set guioptions-=L
+set guioptions-=r  "no right scrollbar
+set guioptions-=R
+set mouse=a " mouse scrolling inside tmux
 
 augroup myvimrc
     au!
@@ -71,7 +73,6 @@ syntax enable
 runtime plugin/dragvisuals.vim
 runtime plugin/rename.vim
 runtime plugin/BufClose.vim
-runtime plugin/goyo.vim
 runtime plugin/mru.vim
 
 let mapleader="'"
@@ -228,12 +229,6 @@ vmap  <expr>  <C-D>    DVB_Duplicate()
 " Work out what the comment character is, by filetype
 autocmd FileType             *sh,awk,python,ruby    let b:cmt = exists('b:cmt') ? b:cmt : '#'
 
-if exists(":Tabularize")
-  nmap <Leader>a= :Tabularize /=.*/<CR>
-  vmap <Leader>a= :Tabularize /=.*/<CR>
-  nmap <Leader>a: :Tabularize /:<CR>
-  vmap <Leader>a: :Tabularize /:<CR>
-endif
 
 " Fast saving
 nmap <leader>w :w!<cr>
@@ -253,6 +248,7 @@ vnoremap < <gv
 
 " Vim jedi disable auto-complete on
 let g:jedi#popup_on_dot=0
+let g:jedi#completions_enabled = 0
 autocmd FileType python setlocal completeopt-=preview
 
 " Insert a blank line
@@ -265,9 +261,6 @@ func! StripTrailingWhitespace()
   %s/\s\+$//ge
   exe "normal `z"
 endfun
-
-" Load neoautocomplete pretty sweet
-let g:neocomplcache_enable_at_startup = 1
 
 " Enable JS tern shortcuts
 let g:tern_map_keys=1
@@ -310,12 +303,11 @@ noremap <C-S-Tab> :tabprev<CR>
 " Close buffer but and leave other intact
 nnoremap <leader>q :BufClose<cr>
 
-nnoremap <Leader>G :Goyo<CR>
-nnoremap <Leader>G! :Goyo!<CR>
-let g:goyo_width=120
-
+" Golang
 au FileType go nmap <Leader>e <Plug>(go-rename)
 au FileType go nmap <leader>r <Plug>(go-run)
+autocmd BufNewFile,BufRead *.go setlocal ft=go
+autocmd FileType go setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4
 
 " Toggle undo graph UI
 nnoremap <C-u> :UndotreeToggle<cr>
@@ -323,17 +315,18 @@ nnoremap <C-u> :UndotreeToggle<cr>
 " Toggle MRU UI
 nnoremap <C-b> :MRU<cr>
 
-" FZF integration
-let g:fzf_launcher = "fzf_launch %s"
-let g:fzf_action = {
-  \ 'ctrl-m': 'e',
-  \ 'ctrl-t': 'tabedit',
-  \ 'alt-j':  'botright split',
-  \ 'alt-k':  'topleft split',
-  \ 'alt-h':  'vertical topleft split',
-  \ 'alt-l':  'vertical botright split' }
-nnoremap <C-f> :FZF<cr>
+nnoremap <C-x> :VimFilerExplorer<cr>
 
 " JS beautify
 autocmd FileType javascript noremap <buffer>  <c-j> :call JsBeautify()<cr>
 
+let g:neocomplcache_enable_at_startup = 1
+
+" vimfiler
+let g:vimfiler_as_default_explorer = 1
+let g:unite_kind_file_use_trashbox = 1
+" Disable netrw.vim
+let g:loaded_netrwPlugin = 1
+call vimfiler#custom#profile('default', 'context', {
+  \ 'safe' : 0,
+  \ })

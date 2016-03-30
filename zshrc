@@ -28,6 +28,8 @@ export PATH=$PATH:~/.vim/plugin
 # add .local to PATH
 export PATH=~/.local/bin:$PATH
 
+export PATH=$PATH:/Users/cabhishek/miniconda3/bin
+
 export WORKON_HOME=$HOME/.virtualenvs
 export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
 source /usr/local/bin/virtualenvwrapper.sh
@@ -38,6 +40,9 @@ export PATH=$PATH:/usr/local/mysql/bin
 # Golang
 export GOPATH=$HOME/projects/go-play
 export PATH=$PATH:$GOPATH/bin
+
+# Nim-lang
+export PATH=$PATH:~/dev/nim-0.13.0/bin
 
 # Z directory jumping util
 . $HOME/dotfiles/z.sh
@@ -72,10 +77,6 @@ for file in $DOTFILES/*/*.zsh; do
     source "$file"
 done
 
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 
 export PATH="/usr/local/sbin:$PATH"

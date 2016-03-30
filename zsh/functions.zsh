@@ -3,6 +3,16 @@ function mkd() {
     mkdir -p "$@" && cd "$@"
 }
 
+function evl(){
+  vm="default"
+
+  if [ $# -ne 0 ]; then
+    vm="$1"
+  fi
+
+  eval "$(docker-machine env $1)"
+}
+
 # Determine size of a file or total size of a directory
 function fs() {
     if du -b /dev/null > /dev/null 2>&1; then
@@ -34,7 +44,7 @@ function workbook(){
 
 # Generic iPython setup
 function notebook(){
-  ipython notebook --profile=cabhishek
+  jupyter notebook --profile=cabhishek
 }
 
 function myip(){

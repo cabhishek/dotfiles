@@ -11,6 +11,9 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
+#reload settings
+alias reload="source ~/.zshrc"
+
 # cd to git root directory
 alias cdr='cd "$(git root)"'
 
@@ -46,10 +49,11 @@ alias t='date "+DATE: %Y-%m-%d%nTIME: %r"'
 
 # Applications
 alias vimapp='open -a "/Applications/MacVim.app/Contents/MacOS/MacVim"'
+alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
 alias sub='open -a "Sublime Text"'
 
 # Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
-alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm update npm -g; npm update -g; sudo gem update'
+alias update='sudo softwareupdate -i -a; brew update; brew cleanup; npm update npm -g; npm update -g; sudo gem update'
 
 #Heroku
 alias hpush="git push heroku"
@@ -89,4 +93,7 @@ alias hstart="/usr/local/Cellar/hadoop/2.7.1/sbin/start-dfs.sh;/usr/local/Cellar
 alias hstop="/usr/local/Cellar/hadoop/2.7.1/sbin/stop-yarn.sh;/usr/local/Cellar/hadoop/2.7.1/sbin/stop-dfs.sh"
 
 # tmux
-alias tmkill="tmux kill-server"
+alias mkill="tmux kill-server"
+alias mux="tmux new-session -s"
+alias mat="tmux attach -t"
+alias mls="tmux list-sessions"

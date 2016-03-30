@@ -6,10 +6,10 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-eunuch'
 Plug 'scrooloose/nerdcommenter'
 Plug 'mbbill/undotree', { 'on': 'UndotreeToggle'   }
-Plug 'davidhalter/jedi-vim'
 Plug 'Raimondi/delimitMate'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'Shougo/neocomplcache.vim'
+Plug 'Shougo/neocomplete.vim'
+Plug 'tmux-plugins/vim-tmux-focus-events'
 
 " formatters
 Plug 'maksimr/vim-jsbeautify'
@@ -20,12 +20,13 @@ Plug 'godlygeek/tabular'
 Plug 'scrooloose/syntastic'
 Plug 'fatih/vim-go'
 Plug 'pangloss/vim-javascript'
+Plug 'davidhalter/jedi-vim'
+Plug 'zah/nim.vim'
 
 " Search
-Plug 'kien/ctrlp.vim'
-Plug 'wincent/command-t'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'majutsushi/tagbar'
-Plug 'Lokaltog/vim-easymotion'
+Plug 'easymotion/vim-easymotion'
 Plug 'rking/ag.vim'
 
 " Colors
@@ -36,6 +37,7 @@ Plug 'chriskempson/base16-vim'
 " Git
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+Plug 'junegunn/gv.vim'
 
 " Markdown
 Plug 'junegunn/vim-xmark', { 'do': 'make' }
@@ -91,6 +93,7 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4     " A tab is four spaces
 
+set modifiable    " Allow edits to vimfiler/netrw
 set backspace=indent,eol,start " Allow backspacing over everything in insert mode
 set autoindent    " Always set autoindenting on
 set copyindent    " Copy the previous indentation on autoindenting
@@ -129,6 +132,7 @@ set fileformats=unix,mac,dos  " Handle Mac and DOS line-endings
                               " but prefer Unix endings
 set nobackup
 set noswapfile
+set clipboard=unnamed
 
 " Better split switching
 map <C-j> <C-W>j
@@ -171,7 +175,6 @@ set wildignore+=*.DS_Store
 set wildignore+=migrations
 set wildignore+=.hg,.git,.svn
 set wildignore+=*.orig
-set wildignore+=migrations  " Django migrations
 
 " Netrw ignore file types
 let g:netrw_list_hide = '.pyc,.git,.DS_Store'
@@ -189,6 +192,7 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 " The default blue is just impossible to see on a black terminal
 highlight Comment ctermfg=Brown
 
+" ctrlp 
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
@@ -235,6 +239,7 @@ nmap <leader>w :w!<cr>
 
 " Quick access to Tagbar
 nmap <Leader>y :TagbarToggle<CR>
+let g:tagbar_sort = 0
 
 " Buffer toggle
 nnoremap <Leader>a :bp<CR>
@@ -278,7 +283,7 @@ map <Leader>h <Plug>(easymotion-linebackward)
 nnoremap <leader>ga :Git add %:p<CR><CR>
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gb :Gblame<CR>
-vnoremap <leader>gb :Gblame<CR>
+nnoremap <leader>gc :Gcommit<CR>
 
 "  DelimitMate Indent + Auto braces
 let g:delimitMate_expand_cr = 1
@@ -315,18 +320,30 @@ nnoremap <C-u> :UndotreeToggle<cr>
 " Toggle MRU UI
 nnoremap <C-b> :MRU<cr>
 
+" Toggle vimfiler
 nnoremap <C-x> :VimFilerExplorer<cr>
 
 " JS beautify
 autocmd FileType javascript noremap <buffer>  <c-j> :call JsBeautify()<cr>
 
-let g:neocomplcache_enable_at_startup = 1
+let g:neocomplete#enable_at_startup = 1
+" Use smartcase.
+let g:neocomplete#enable_smart_case = 1
+" Set minimum syntax keyword length.
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " vimfiler
 let g:vimfiler_as_default_explorer = 1
 let g:unite_kind_file_use_trashbox = 1
-" Disable netrw.vim
 let g:loaded_netrwPlugin = 1
 call vimfiler#custom#profile('default', 'context', {
   \ 'safe' : 0,
   \ })
+
+call unite#filters#matcher_default#use(['sorter_rank'])
+nnoremap <leader>r :<C-u>Unite -start-insert file_rec<CR>
+nnoremap <silent> <leader>b :<C-u>Unite buffer bookmark<CR>
+
+let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|svn))$'

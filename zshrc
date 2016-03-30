@@ -31,8 +31,8 @@ export PATH=~/.local/bin:$PATH
 export PATH=$PATH:/Users/cabhishek/miniconda3/bin
 
 export WORKON_HOME=$HOME/.virtualenvs
-export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
-source /usr/local/bin/virtualenvwrapper.sh
+# export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
+# source /usr/local/bin/virtualenvwrapper.sh
 
 #MYSQL
 export PATH=$PATH:/usr/local/mysql/bin
@@ -66,17 +66,19 @@ eval "$(hub alias -s)"
 
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
-# Setup NVM
-[ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh # This loads NVM
-export NVM_DIR="~/.nvm"
-
 export DOTFILES="$(dirname $(readlink $HOME/.zshrc))"
 
 # Load all zsh files
 for file in $DOTFILES/*/*.zsh; do
-    source "$file"
+  source "$file"
 done
 
+[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -z "$TMPDIR" ] && TMPDIR=/tmp
 
 export PATH="/usr/local/sbin:$PATH"
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"

@@ -3,7 +3,7 @@ function prompt_char {
     hg root >/dev/null 2>/dev/null && echo '☿' && return
 }
 
-PROMPT='$(prompt_char) %{$fg_bold[red]%}➜ %{$fg_bold[cyan]%}%B%~%b %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
+PROMPT='$(prompt_char) %{$fg_bold[red]%}λ %{$fg_bold[cyan]%}%B%~%b %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
 
 CRUNCH_GIT_CLEAN_COLOR="%{$fg[green]%}"
 CRUNCH_GIT_DIRTY_COLOR="%{$fg[red]%}"

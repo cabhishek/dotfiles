@@ -10,6 +10,7 @@ Plug 'Raimondi/delimitMate'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'Shougo/neocomplete.vim'
 Plug 'tmux-plugins/vim-tmux-focus-events'
+Plug 'junegunn/vim-easy-align'
 
 " formatters
 Plug 'maksimr/vim-jsbeautify'
@@ -22,6 +23,8 @@ Plug 'fatih/vim-go'
 Plug 'pangloss/vim-javascript'
 Plug 'davidhalter/jedi-vim'
 Plug 'zah/nim.vim'
+Plug 'mxw/vim-jsx'
+Plug 'othree/yajs.vim'
 
 " Search
 Plug 'ctrlpvim/ctrlp.vim'
@@ -30,9 +33,9 @@ Plug 'easymotion/vim-easymotion'
 Plug 'rking/ag.vim'
 
 " Colors
-Plug 'chriskempson/vim-tomorrow-theme'
 Plug 'junegunn/seoul256.vim'
 Plug 'chriskempson/base16-vim'
+Plug 'mhartington/oceanic-next'
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -53,8 +56,13 @@ Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
 
 " Main theme settings
-colo seoul256
-let g:seoul256_background = 235
+" embers, ashes, twilight, ocean
+" colorscheme base16-ocean
+" colorscheme OceanicNext
+"let base16colorspace=256
+colors zenburn
+" colo seoul256
+" let g:seoul256_background = 235
 set background=dark
 set guioptions-=m  "no menu
 set guioptions-=T  "no toolbar
@@ -63,6 +71,10 @@ set guioptions-=L
 set guioptions-=r  "no right scrollbar
 set guioptions-=R
 set mouse=a " mouse scrolling inside tmux
+set t_Co=256
+
+" Automatically reload .vimrc if it changes
+autocmd! bufwritepost .vimrc source %
 
 augroup myvimrc
     au!
@@ -85,21 +97,24 @@ nnoremap ; :
 " Basic setup
 set encoding=utf-8
 "set gfn=Monaco:h12 " Font size
-set gfn=Inconsolata:h14 " Font size 
+" set guifont=Menlo:h12 columns=80 lines=40
+"set gfn=Inconsolata:h14 " Font size
+set macligatures
+set guifont=Fira\ Code:h13
+
 set expandtab      " Insert with spaces instead of tabs
 set nowrap         " Dont wrap lines
 set smartindent
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4     " A tab is four spaces
+" set tabstop=4
+" set softtabstop=4
+" set shiftwidth=2    " A tab is four spaces
 
 set modifiable    " Allow edits to vimfiler/netrw
 set backspace=indent,eol,start " Allow backspacing over everything in insert mode
 set autoindent    " Always set autoindenting on
 set copyindent    " Copy the previous indentation on autoindenting
 set number        " Always show line numbers
-set numberwidth=2 
-set shiftwidth=4  " Number of spaces to use for autoindenting
+" set numberwidth=2
 set shiftround    " Use multiple of shiftwidth when indenting with '<' and '>'
 
 set ignorecase    " Ignore case when searching
@@ -154,7 +169,7 @@ set gcr=a:blinkon0
 set mat=2 " How many tenths of a second to blink when matching brackets
 
 " Strip trailing whitespace on save for specified file types.
-autocmd BufWritePre *.css,*.html,*.js,*.json,*.md,*.py,*.rb,*.sh,*.txt
+autocmd BufWritePre *.css,*.html,*.js,*.json,*.md,*.py,*.rb,*.sh,*.txt,*.nim,*.go
     \ :call StripTrailingWhitespace()
 
 " Status lines
@@ -192,7 +207,7 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 " The default blue is just impossible to see on a black terminal
 highlight Comment ctermfg=Brown
 
-" ctrlp 
+" ctrlp
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
@@ -203,7 +218,7 @@ nnoremap \ :Ag<SPACE>
 let g:syntastic_enable_perl_checker = 1
 let g:syntastic_python_checkers = ['pylint']
 let g:syntastic_quiet_messages = { "type": "style" }
-let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_error_symbol = '✗'
 let g:syntastic_warning_symbol = '!'
 
@@ -242,8 +257,8 @@ nmap <Leader>y :TagbarToggle<CR>
 let g:tagbar_sort = 0
 
 " Buffer toggle
-nnoremap <Leader>a :bp<CR>
-nnoremap <Leader>s :bn<CR>
+nnoremap <Leader>a :bprev<CR>
+nnoremap <Leader>s :bnext<CR>
 
 " Visual mode indentation
 noremap > >>
@@ -312,7 +327,7 @@ nnoremap <leader>q :BufClose<cr>
 au FileType go nmap <Leader>e <Plug>(go-rename)
 au FileType go nmap <leader>r <Plug>(go-run)
 autocmd BufNewFile,BufRead *.go setlocal ft=go
-autocmd FileType go setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4
+autocmd FileType go setlocal expandtab
 
 " Toggle undo graph UI
 nnoremap <C-u> :UndotreeToggle<cr>
@@ -347,3 +362,16 @@ nnoremap <leader>r :<C-u>Unite -start-insert file_rec<CR>
 nnoremap <silent> <leader>b :<C-u>Unite buffer bookmark<CR>
 
 let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|svn))$'
+let g:jsx_ext_required = 0
+
+fun! JumpToDef()
+  if exists("*GotoDefinition_" . &filetype)
+    call GotoDefinition_{&filetype}()
+  else
+    exe "norm! \<C-]>"
+  endif
+endf
+
+" Jump to tag
+nn <M-g> :call JumpToDef()<cr>
+ino <M-g> <esc>:call JumpToDef()<cr>i

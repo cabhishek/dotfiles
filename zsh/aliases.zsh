@@ -49,7 +49,7 @@ alias t='date "+DATE: %Y-%m-%d%nTIME: %r"'
 
 # Applications
 alias vim='open -a "/Applications/MacVim.app/Contents/MacOS/MacVim"'
-alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
+alias vimapp='/Applications/MacVim.app/Contents/MacOS/Vim'
 alias sub='open -a "Sublime Text"'
 
 # Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages

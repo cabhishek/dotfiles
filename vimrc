@@ -339,7 +339,8 @@ nnoremap <C-b> :MRU<cr>
 nnoremap <C-x> :VimFilerExplorer<cr>
 
 " JS beautify
-autocmd FileType javascript noremap <buffer>  <c-j> :call JsBeautify()<cr>
+autocmd FileType javascript set formatprg=prettier\ --stdin
+autocmd BufWritePre *.js :normal gggqG
 
 let g:neocomplete#enable_at_startup = 1
 " Use smartcase.

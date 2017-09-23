@@ -23,17 +23,20 @@ alias j="jobs"
 alias sdown="sudo shutdown -h now"
 alias rstart="sudo shutdown -r now"
 
+alias rr="ranger"
+
 #venv
 alias mkvenv=mkvirtualenv
 alias lsvenv=lsvirtualenv
 alias rmvenv=rmvirtualenv
 alias venv="source env/bin/activate"
+alias v3="source env3/bin/activate"
 
 # Mysql
 alias start-mysql="mysql.server start"
 alias stop-mysql="mysql.server stop"
-alias mysql=/usr/local/Cellar/mysql/5.6.26/bin/mysql
-alias mysqladmin=/usr/local/Cellar/mysql/5.6.26/bin/mysqladmin
+alias mysql=/usr/local/Cellar/mysql/5.7.17/bin/mysql
+alias mysqladmin=/usr/local/Cellar/mysql/5.7.17/bin/mysqladmin
 
 # Productivity
 alias path='echo -e ${PATH//:/\\n}'
@@ -51,9 +54,6 @@ alias t='date "+DATE: %Y-%m-%d%nTIME: %r"'
 alias vim='open -a "/Applications/MacVim.app/Contents/MacOS/MacVim"'
 alias vimapp='/Applications/MacVim.app/Contents/MacOS/Vim'
 alias sub='open -a "Sublime Text"'
-
-# Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
-alias update='sudo softwareupdate -i -a; brew update; brew cleanup; npm update npm -g; npm update -g; sudo gem update'
 
 #Hub
 alias git=hub
@@ -74,17 +74,19 @@ alias gc="git commit -a"
 alias gm="git merge --no-ff"
 alias gpt="git push --tags"
 alias grh="git reset --hard"
-alias gb="git branch"
 alias gcp="git cherry-pick"
 alias grevall="git checkout -- ."
 alias gcm="git commit --amend"
 alias dmerged='git branch --merged | grep -v "\*" | xargs -n 1 git branch -d'
 alias grv="git remote -v"
-alias gao="git remote add origin"
+alias gra="git remote add"
 alias stash="git stash"
+alias gsm="git sprout master"
+alias gfsync="git fetch upstream && git reset --hard upstream/master"
+alias gs="git fetch upstream && git rebase upstream/master"
 
 # Log summary from previous day commits
-alias gsup="clear && log --since '1 day ago' --oneline --author akapatkar@netflix.com"
+alias gsup="clear && log --since '1 day ago' --oneline --author cabhishek@gmail.com"
 
 # Git logging
 alias gl="git log --pretty='format:%Cgreen%h%C(blue) %an %C(reset) - %s %C(black)%C(bold)%cr' --graph"
@@ -98,3 +100,6 @@ alias mls="tmux list-sessions"
 
 # npm
 alias 'npm install'='npm install --silent'
+
+# SSH
+alias dkdb="ssh abhi@science.datakind.org"

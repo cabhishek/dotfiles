@@ -6,7 +6,5 @@
     ~/.vimrc: vimrc
     ~/.zshrc: zshrc
     ~/.tmux.conf: tmux.conf
-    ~/.pylintrc: linters/pylintrc
-    ~/.eslintrc: linters/eslintrc
     ~/.gitconfig: git/gitconfig
     ~/.gitignore_global: git/gitignore_global

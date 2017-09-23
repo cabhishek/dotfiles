@@ -13,29 +13,39 @@ git submodule update --init --recursive "${DOTBOT_DIR}"
 
 "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
 
-if [ "$1" = "all" ]; then
-	echo ">>> Installing Homebrew"
-	ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"	
+echo ">>> Installing Homebrew"
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-	echo ">>> Updating homebrew"
-	brew update
+echo ">>> Updating homebrew"
+brew update
 
-	brew install \
-		ag wget tree legit hub ctags \
-		git imagemagick \
-		pylint pyenv stormssh redis \
-		sl tmux tree unrar wget zsh jq \
-		the_silver_searcher git-extras \
-		heroku-toolbelt
+echo ">>> Installing core packages"
+brew install \
+	ag wget tree legit hub ctags \
+	git pyenv stormssh redis \
+	tmux tree unrar zsh zsh-completions \
+	the_silver_searcher git-extras \
+	heroku mysql
 
-	echo ">>> Installing MacVim"
-	brew install macvim
+echo ">>> Installing bash fuzzy search"
+brew install fzf
+# Install shell extensions
+/usr/local/opt/fzf/install
 
-	echo ">>> Installing bash fuzzy search"
-	brew reinstall --HEAD fzf
-	# Install shell extensions
-	/usr/local/Cellar/fzf/HEAD/install
+echo ">>> Installing zsh"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+curl -L https://iterm2.com/misc/`basename $SHELL`_startup.in \
+-o ~/.iterm2_shell_integration.`basename $SHELL`
 
-	echo ">>> Installing nvm"
-	wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.24.1/install.sh | bash
-fi
+echo ">>> Installing trash"
+npm install -g trash-cli
+
+echo ">>> Installing reattach-to-user-namespace for tmux/macos copy/paste"
+brew install reattach-to-user-namespace
+
+echo ">>> Installing facebook fpp"
+brew update; brew install fpp; fpp
+
+echo ">>> Installing tmux pluging manager"
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+

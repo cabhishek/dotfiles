@@ -27,12 +27,7 @@ export PATH=$PATH:~/.vim/plugin
 
 # add .local to PATH
 export PATH=~/.local/bin:$PATH
-
-export PATH=$PATH:/Users/cabhishek/miniconda3/bin
-
 export WORKON_HOME=$HOME/.virtualenvs
-# export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
-# source /usr/local/bin/virtualenvwrapper.sh
 
 #MYSQL
 export PATH=$PATH:/usr/local/mysql/bin
@@ -40,9 +35,11 @@ export PATH=$PATH:/usr/local/mysql/bin
 # Golang
 export GOPATH=$HOME/projects/go-play
 export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:/usr/local/opt/go/libexec/bin
 
-# Nim-lang
-export PATH=$PATH:~/dev/nim-0.13.0/bin
+# Nim
+export PATH=~/.nimble/bin:$PATH
+export NIM_LIB_PREFIX=~/.choosenim/toolchains/nim-0.17.0/
 
 # Z directory jumping util
 . $HOME/dotfiles/z.sh
@@ -53,13 +50,6 @@ export PATH=$PYENV_ROOT/bin:$PATH
 
 #JAVA
 export JAVA_HOME=$(/usr/libexec/java_home)
-
-# Setup rbenv
-eval "$(rbenv init - --no-rehash)"
-
-# Setup pyenv
-eval "$(pyenv init - zsh)"
-eval "$(pyenv virtualenv-init -)"
 
 # Alias Hub
 eval "$(hub alias -s)"
@@ -78,7 +68,5 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -z "$TMPDIR" ] && TMPDIR=/tmp
-
-export PATH="/usr/local/sbin:$PATH"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"

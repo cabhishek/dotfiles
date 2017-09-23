@@ -13,18 +13,14 @@ Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'junegunn/vim-easy-align'
 
 " formatters
-Plug 'maksimr/vim-jsbeautify'
-Plug 'einars/js-beautify'
 Plug 'godlygeek/tabular'
 
 " Lang
-Plug 'scrooloose/syntastic'
+Plug 'vim-syntastic/syntastic'
 Plug 'fatih/vim-go'
 Plug 'pangloss/vim-javascript'
-Plug 'davidhalter/jedi-vim'
-Plug 'zah/nim.vim'
 Plug 'mxw/vim-jsx'
-Plug 'othree/yajs.vim'
+Plug 'zah/nim.vim'
 
 " Search
 Plug 'ctrlpvim/ctrlp.vim'
@@ -36,6 +32,8 @@ Plug 'rking/ag.vim'
 Plug 'junegunn/seoul256.vim'
 Plug 'chriskempson/base16-vim'
 Plug 'mhartington/oceanic-next'
+Plug 'liuchengxu/space-vim-dark'
+Plug 'nightsense/vim-crunchbang'
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -56,13 +54,13 @@ Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
 
 " Main theme settings
-" embers, ashes, twilight, ocean
 " colorscheme base16-ocean
-" colorscheme OceanicNext
-"let base16colorspace=256
-colors zenburn
+colorscheme OceanicNext
+" let base16colorspace=256
+" colorscheme space-vim-dark
 " colo seoul256
 " let g:seoul256_background = 235
+" colorscheme crunchbang
 set background=dark
 set guioptions-=m  "no menu
 set guioptions-=T  "no toolbar
@@ -340,7 +338,6 @@ nnoremap <C-x> :VimFilerExplorer<cr>
 
 " JS beautify
 autocmd FileType javascript set formatprg=prettier\ --stdin
-autocmd BufWritePre *.js :normal gggqG
 
 let g:neocomplete#enable_at_startup = 1
 " Use smartcase.
@@ -376,3 +373,17 @@ endf
 " Jump to tag
 nn <M-g> :call JumpToDef()<cr>
 ino <M-g> <esc>:call JumpToDef()<cr>i
+
+" Called once right before you start selecting multiple cursors
+function! Multiple_cursors_before()
+  if exists(':NeoCompleteLock')==2
+    exe 'NeoCompleteLock'
+  endif
+endfunction
+
+" Called once only when the multiple selection is canceled (default <Esc>)
+function! Multiple_cursors_after()
+  if exists(':NeoCompleteUnlock')==2
+    exe 'NeoCompleteUnlock'
+  endif
+endfunction

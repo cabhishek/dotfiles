@@ -1,8 +1,6 @@
 https://github.com/b4winckler/macvim/wiki/Building
 env LDFAGS=-L/usr/local/opt/ncurses/lib ./configure  --with-features=huge \
                   --enable-largefile \
-                   --enable-rubyinterp \
-                   --enable-pythoninterp \
                    --enable-python3interp \
                    --enable-perlinterp \
                    --enable-luainterp \
@@ -11,4 +9,5 @@ env LDFAGS=-L/usr/local/opt/ncurses/lib ./configure  --with-features=huge \
                    --with-luajit \
                    --with-lua-prefix=/Users/akapatkar/dev/lua-5.1.5 \
                    --enable-multibyte \
-                   --with-tlib=ncurses
+                   --with-tlib=ncurses \
+		   --with-compiledby=cabhishek@gmail.com

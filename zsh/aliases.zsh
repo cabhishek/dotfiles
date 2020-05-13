@@ -29,8 +29,9 @@ alias rr="ranger"
 alias mkvenv=mkvirtualenv
 alias lsvenv=lsvirtualenv
 alias rmvenv=rmvirtualenv
-alias venv="source env/bin/activate"
+alias v2="source env/bin/activate"
 alias v3="source env3/bin/activate"
+alias v3-mypy="source env3-mypy/bin/activate"
 
 # Mysql
 alias start-mysql="mysql.server start"
@@ -51,12 +52,10 @@ alias s=fzf
 alias t='date "+DATE: %Y-%m-%d%nTIME: %r"'
 
 # Applications
+alias vi=/Applications/MacVim.app/Contents/MacOS/vim
 alias vim='open -a "/Applications/MacVim.app/Contents/MacOS/MacVim"'
 alias vimapp='/Applications/MacVim.app/Contents/MacOS/Vim'
 alias sub='open -a "Sublime Text"'
-
-#Hub
-alias git=hub
 
 # More Git
 alias gpusho="git push origin"

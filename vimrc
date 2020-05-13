@@ -8,18 +8,18 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'mbbill/undotree', { 'on': 'UndotreeToggle'   }
 Plug 'Raimondi/delimitMate'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'Shougo/neocomplete.vim'
+Plug 'Shougo/neocomplete'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'junegunn/vim-easy-align'
+Plug 'gu-fan/simpleterm.vim'
+Plug 'davidhalter/jedi-vim'
+Plug 'dense-analysis/ale'
 
 " formatters
 Plug 'godlygeek/tabular'
 
 " Lang
-Plug 'vim-syntastic/syntastic'
-Plug 'fatih/vim-go'
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
+" Plug 'pangloss/vim-javascript'
 Plug 'zah/nim.vim'
 
 " Search
@@ -34,6 +34,8 @@ Plug 'chriskempson/base16-vim'
 Plug 'mhartington/oceanic-next'
 Plug 'liuchengxu/space-vim-dark'
 Plug 'nightsense/vim-crunchbang'
+Plug 'morhetz/gruvbox'
+Plug 'arcticicestudio/nord-vim'
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -54,13 +56,13 @@ Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
 
 " Main theme settings
-" colorscheme base16-ocean
-colorscheme OceanicNext
-" let base16colorspace=256
-" colorscheme space-vim-dark
-" colo seoul256
-" let g:seoul256_background = 235
-" colorscheme crunchbang
+if has("gui_running")
+  colorscheme nord
+else
+  colorscheme seoul256
+  let g:seoul256_background = 235
+endif
+
 set background=dark
 set guioptions-=m  "no menu
 set guioptions-=T  "no toolbar
@@ -70,14 +72,6 @@ set guioptions-=r  "no right scrollbar
 set guioptions-=R
 set mouse=a " mouse scrolling inside tmux
 set t_Co=256
-
-" Automatically reload .vimrc if it changes
-autocmd! bufwritepost .vimrc source %
-
-augroup myvimrc
-    au!
-    au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | if has('gui_running') | so $MYGVIMRC | endif
-augroup END
 
 filetype plugin indent on
 syntax enable
@@ -100,6 +94,9 @@ set encoding=utf-8
 set macligatures
 set guifont=Fira\ Code:h13
 
+set autochdir
+
+" set spell
 set expandtab      " Insert with spaces instead of tabs
 set nowrap         " Dont wrap lines
 set smartindent
@@ -153,7 +150,10 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
-" escape out of mode
+" This will cause all splits to happen below (including term)
+set splitbelow
+
+" Escape out of mode
 inoremap jk <Esc>
 
 " Inserts a space to push the rest of the line to the right, while leaving the cursor in the same position
@@ -165,10 +165,6 @@ set autoread
 set gcr=a:blinkon0
 
 set mat=2 " How many tenths of a second to blink when matching brackets
-
-" Strip trailing whitespace on save for specified file types.
-autocmd BufWritePre *.css,*.html,*.js,*.json,*.md,*.py,*.rb,*.sh,*.txt,*.nim,*.go
-    \ :call StripTrailingWhitespace()
 
 " Status lines
 set statusline=%f\%y " Path to the file
@@ -183,7 +179,7 @@ set statusline+=%{fugitive#statusline()}
 set wildmenu
 set wildmode=list:full
 
-set wildignore+=*.dll,*.pyc,.venv,env
+set wildignore+=*.dll,*.pyc,.venv,env3,env
 set wildignore+=*.DS_Store
 set wildignore+=migrations
 set wildignore+=.hg,.git,.svn
@@ -193,6 +189,24 @@ set wildignore+=*.orig
 let g:netrw_list_hide = '.pyc,.git,.DS_Store'
 
 au FocusLost * :wa  "save on auto focus
+
+" Work out what the comment character is, by filetype
+autocmd FileType             *sh,awk,python,ruby    let b:cmt = exists('b:cmt') ? b:cmt : '#'
+
+" Fast saving
+nmap <leader>w :w!<cr>
+
+" Automatically reload .vimrc if it changes
+autocmd! bufwritepost .vimrc source %
+
+augroup myvimrc
+    au!
+    au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | if has('gui_running') | so $MYGVIMRC | endif
+augroup END
+
+" Strip trailing whitespace on save for specified file types.
+autocmd BufWritePre *.css,*.html,*.js,*.json,*.md,*.py,*.rb,*.sh,*.txt,*.nim,*.go
+    \ :call StripTrailingWhitespace()
 
 nmap <silent> ,/ :nohlsearch<CR>
 
@@ -213,12 +227,11 @@ let g:ctrlp_cmd = 'CtrlP'
 nnoremap \ :Ag<SPACE>
 
 " Linting setup
-let g:syntastic_enable_perl_checker = 1
-let g:syntastic_python_checkers = ['pylint']
-let g:syntastic_quiet_messages = { "type": "style" }
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_error_symbol = '✗'
-let g:syntastic_warning_symbol = '!'
+" let g:syntastic_enable_perl_checker = 1
+" let g:syntastic_python_checkers = ['pylint']
+" let g:syntastic_quiet_messages = { "type": "style" }
+" let g:syntastic_error_symbol = '✗'
+" let g:syntastic_warning_symbol = '!'
 
 " Code fold settings
 set foldmethod=indent   " Fold based on indent
@@ -243,13 +256,6 @@ vmap  <expr>  <UP>     DVB_Drag('up')
 vmap  <expr>  D        DVB_Duplicate()
 vmap  <expr>  <C-D>    DVB_Duplicate()
 
-" Work out what the comment character is, by filetype
-autocmd FileType             *sh,awk,python,ruby    let b:cmt = exists('b:cmt') ? b:cmt : '#'
-
-
-" Fast saving
-nmap <leader>w :w!<cr>
-
 " Quick access to Tagbar
 nmap <Leader>y :TagbarToggle<CR>
 let g:tagbar_sort = 0
@@ -264,10 +270,17 @@ noremap < <<
 vnoremap > >gv
 vnoremap < <gv
 
+" Linters
 " Vim jedi disable auto-complete on
-let g:jedi#popup_on_dot=0
-let g:jedi#completions_enabled = 0
+let g:jedi#show_call_signatures = "1"
+let g:jedi#popup_on_dot = 1
+let g:jedi#completions_enabled = 1
 autocmd FileType python setlocal completeopt-=preview
+
+let g:neocomplete#enable_at_startup = 1
+let g:ale_completion_enabled = 1
+let g:ale_virtualenv_dir_names = ['env3']
+let g:ale_linters = {'python': ['pylint', 'pyls']}
 
 " Insert a blank line
 nmap <S-Enter> O<Esc>j
@@ -281,7 +294,7 @@ func! StripTrailingWhitespace()
 endfun
 
 " Enable JS tern shortcuts
-let g:tern_map_keys=1
+" let g:tern_map_keys=1
 
 " Easymotion
 let g:EasyMotion_smartcase = 1
@@ -321,12 +334,6 @@ noremap <C-S-Tab> :tabprev<CR>
 " Close buffer but and leave other intact
 nnoremap <leader>q :BufClose<cr>
 
-" Golang
-au FileType go nmap <Leader>e <Plug>(go-rename)
-au FileType go nmap <leader>r <Plug>(go-run)
-autocmd BufNewFile,BufRead *.go setlocal ft=go
-autocmd FileType go setlocal expandtab
-
 " Toggle undo graph UI
 nnoremap <C-u> :UndotreeToggle<cr>
 
@@ -336,18 +343,11 @@ nnoremap <C-b> :MRU<cr>
 " Toggle vimfiler
 nnoremap <C-x> :VimFilerExplorer<cr>
 
-" JS beautify
-autocmd FileType javascript set formatprg=prettier\ --stdin
-
-let g:neocomplete#enable_at_startup = 1
-" Use smartcase.
-let g:neocomplete#enable_smart_case = 1
-" Set minimum syntax keyword length.
-let g:neocomplete#sources#syntax#min_keyword_length = 3
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " vimfiler
+let g:vimfiler_ignore_filters = ['matcher_ignore_wildignore']
 let g:vimfiler_as_default_explorer = 1
 let g:unite_kind_file_use_trashbox = 1
 let g:loaded_netrwPlugin = 1
@@ -359,8 +359,7 @@ call unite#filters#matcher_default#use(['sorter_rank'])
 nnoremap <leader>r :<C-u>Unite -start-insert file_rec<CR>
 nnoremap <silent> <leader>b :<C-u>Unite buffer bookmark<CR>
 
-let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|svn))$'
-let g:jsx_ext_required = 0
+let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist|test-reports|docs|env3|env)|(\.(swp|ico|git|svn))$'
 
 fun! JumpToDef()
   if exists("*GotoDefinition_" . &filetype)

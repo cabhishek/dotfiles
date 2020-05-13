@@ -27,7 +27,14 @@ export PATH=$PATH:~/.vim/plugin
 
 # add .local to PATH
 export PATH=~/.local/bin:$PATH
-export WORKON_HOME=$HOME/.virtualenvs
+
+# add neovim
+export PATH=~/neovim/nvim-osx64/bin:$PATH
+
+# Nim
+# export PATH=/Users/akapatkar/dev/Nim/bin:$PATH
+export PATH=~/.nimble/bin:$PATH
+# export NIM_LIB_PREFIX=~/.choosenim/toolchains/nim-0.17.2/
 
 #MYSQL
 export PATH=$PATH:/usr/local/mysql/bin
@@ -36,10 +43,6 @@ export PATH=$PATH:/usr/local/mysql/bin
 export GOPATH=$HOME/projects/go-play
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
-
-# Nim
-export PATH=~/.nimble/bin:$PATH
-export NIM_LIB_PREFIX=~/.choosenim/toolchains/nim-0.17.0/
 
 # Z directory jumping util
 . $HOME/dotfiles/z.sh
@@ -50,9 +53,6 @@ export PATH=$PYENV_ROOT/bin:$PATH
 
 #JAVA
 export JAVA_HOME=$(/usr/libexec/java_home)
-
-# Alias Hub
-eval "$(hub alias -s)"
 
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
@@ -70,3 +70,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -z "$TMPDIR" ] && TMPDIR=/tmp
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
+
+export GIT_EDITOR=vim

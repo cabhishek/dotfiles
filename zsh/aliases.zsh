@@ -32,6 +32,7 @@ alias rmvenv=rmvirtualenv
 alias v2="source env/bin/activate"
 alias v3="source env3/bin/activate"
 alias v3-mypy="source env3-mypy/bin/activate"
+alias v37="source env37/bin/activate"
 
 # Mysql
 alias start-mysql="mysql.server start"

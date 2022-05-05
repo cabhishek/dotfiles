@@ -272,13 +272,13 @@ vnoremap < <gv
 
 " Linters
 " Vim jedi disable auto-complete on
-let g:jedi#show_call_signatures = "1"
-let g:jedi#popup_on_dot = 1
-let g:jedi#completions_enabled = 1
+let g:jedi#show_call_signatures = "0"
+let g:jedi#popup_on_dot = 0
+let g:jedi#completions_enabled = 0
 autocmd FileType python setlocal completeopt-=preview
 
 let g:neocomplete#enable_at_startup = 1
-let g:ale_completion_enabled = 1
+let g:ale_completion_enabled = 0
 let g:ale_virtualenv_dir_names = ['env3']
 let g:ale_linters = {'python': ['pylint', 'pyls']}
 
